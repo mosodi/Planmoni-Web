@@ -314,8 +314,10 @@ function App() {
     }
   };
 
-  // Clean device mockup component using your new images
+  // Optimized device mockup component with larger mobile images
   const DeviceMockup = () => {
+    const [imageLoaded, setImageLoaded] = useState(false);
+
     const getDeviceImage = () => {
       switch (deviceType) {
         case 'ios':
@@ -338,18 +340,48 @@ function App() {
       }
     };
 
+    const getImageClasses = () => {
+      switch (deviceType) {
+        case 'ios':
+          // Doubled size for iOS
+          return 'w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl h-auto drop-shadow-2xl';
+        case 'android':
+          // Doubled size for Android
+          return 'w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl h-auto drop-shadow-2xl';
+        default:
+          // Keep web size smaller
+          return 'w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] h-auto drop-shadow-2xl';
+      }
+    };
+
+    const handleImageLoad = () => {
+      setImageLoaded(true);
+    };
+
     return (
       <div className="relative flex justify-center items-center">
-        {/* Background decorative elements */}
-        <div className="absolute top-0 right-0 w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full opacity-30 -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-gradient-to-tr from-orange-100 to-pink-100 rounded-full opacity-30 -z-10"></div>
+        {/* Background decorative elements - adjusted for larger mobile images */}
+        <div className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full opacity-30 -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-40 sm:h-40 lg:w-56 lg:h-56 bg-gradient-to-tr from-orange-100 to-pink-100 rounded-full opacity-30 -z-10"></div>
         
-        {/* Device mockup - significantly reduced size */}
+        {/* Device mockup with loading optimization */}
         <div className="relative">
+          {/* Loading placeholder */}
+          {!imageLoaded && (
+            <div className={`${getImageClasses()} bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl animate-pulse flex items-center justify-center`}>
+              <Monitor className="w-16 h-16 text-gray-400" />
+            </div>
+          )}
+          
+          {/* Optimized image with lazy loading */}
           <img 
             src={getDeviceImage()}
             alt={getDeviceAlt()}
-            className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] h-auto drop-shadow-2xl"
+            className={`${getImageClasses()} ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
+            onLoad={handleImageLoad}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
         </div>
       </div>
@@ -501,7 +533,7 @@ function App() {
               </div>
             </div>
 
-            {/* Clean Device Mockup */}
+            {/* Optimized Device Mockup */}
             <div className="flex-1 relative justify-center order-1 lg:order-2 w-full max-w-lg lg:max-w-none">
               <DeviceMockup />
             </div>
@@ -722,7 +754,7 @@ function App() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-            {/* Clean Device Mockup */}
+            {/* Optimized Device Mockup */}
             <div className="flex-1 relative flex justify-center order-2 lg:order-1 w-full max-w-sm lg:max-w-none">
               <DeviceMockup />
             </div>
