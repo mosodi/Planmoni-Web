@@ -68,32 +68,32 @@ function App() {
 
   const features = [
     {
-      icon: <Lock className="w-8 h-8 text-blue-800" />,
+      icon: <Lock className="w-8 h-8 text-[#1F3A8A]" />,
       title: "Vault Locking",
       description: "Securely lock away large sums of money until your scheduled release date."
     },
     {
-      icon: <Clock className="w-8 h-8 text-blue-800" />,
+      icon: <Clock className="w-8 h-8 text-[#1F3A8A]" />,
       title: "Automated Payouts",
       description: "Set up your personal salary schedule and receive money automatically."
     },
     {
-      icon: <CreditCard className="w-8 h-8 text-blue-800" />,
+      icon: <CreditCard className="w-8 h-8 text-[#1F3A8A]" />,
       title: "Multiple Payment Methods",
       description: "Support for various payment options to make deposits and receive payouts."
     },
     {
-      icon: <Ban className="w-8 h-8 text-blue-800" />,
+      icon: <Ban className="w-8 h-8 text-[#1F3A8A]" />,
       title: "No Direct Spending",
       description: "Locked funds can't be spent impulsively, ensuring your financial goals."
     },
     {
-      icon: <AlertCircle className="w-8 h-8 text-blue-800" />,
+      icon: <AlertCircle className="w-8 h-8 text-[#1F3A8A]" />,
       title: "Emergency Release",
       description: "Access your funds in genuine emergencies with verification process."
     },
     {
-      icon: <Settings className="w-8 h-8 text-blue-800" />,
+      icon: <Settings className="w-8 h-8 text-[#1F3A8A]" />,
       title: "Full Control",
       description: "You maintain complete control over your money and payout schedules."
     }
@@ -101,27 +101,27 @@ function App() {
 
   const useCases = [
     {
-      icon: <GraduationCap className="w-12 h-12 text-blue-800" />,
+      icon: <GraduationCap className="w-12 h-12 text-[#1F3A8A]" />,
       title: "Tuition & Rent Savings",
       description: "For students managing school fees and rent payments with scheduled releases."
     },
     {
-      icon: <Users className="w-12 h-12 text-blue-800" />,
+      icon: <Users className="w-12 h-12 text-[#1F3A8A]" />,
       title: "Family Budgeting",
       description: "Help parents schedule and protect family funds for important expenses."
     },
     {
-      icon: <Briefcase className="w-12 h-12 text-blue-800" />,
+      icon: <Briefcase className="w-12 h-12 text-[#1F3A8A]" />,
       title: "Freelancer Income Management",
       description: "Handle irregular payments with ease and create stable income streams."
     },
     {
-      icon: <Target className="w-12 h-12 text-blue-800" />,
+      icon: <Target className="w-12 h-12 text-[#1F3A8A]" />,
       title: "Project-Based Saving",
       description: "Save and release money for specific goals like travel, business, or purchases."
     },
     {
-      icon: <Zap className="w-12 h-12 text-blue-800" />,
+      icon: <Zap className="w-12 h-12 text-[#1F3A8A]" />,
       title: "Impulse Control",
       description: "Prevent impulsive buying by making funds temporarily inaccessible."
     }
@@ -153,7 +153,7 @@ function App() {
 
   const perfectForCategories = [
     {
-      icon: <GraduationCap className="w-12 h-12 text-blue-800" />,
+      icon: <GraduationCap className="w-12 h-12 text-[#1F3A8A]" />,
       title: "Students",
       description: "Save money for tuition payments"
     },
@@ -181,7 +181,7 @@ function App() {
       description: "256-bit SSL encryption"
     },
     {
-      icon: <CheckCircle className="w-12 h-12 text-blue-800" />,
+      icon: <CheckCircle className="w-12 h-12 text-[#1F3A8A]" />,
       title: "KYC & 2FA",
       description: "Identity verification & two-factor auth"
     },
@@ -362,7 +362,7 @@ function App() {
     return (
       <div className="relative flex justify-center items-center">
         {/* Background decorative elements - adjusted for larger mobile images */}
-        <div className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full opacity-30 -z-10"></div>
+        <div className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-gradient-to-br from-[#1F3A8A]/10 to-[#1F3A8A]/20 rounded-full opacity-30 -z-10"></div>
         <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-40 sm:h-40 lg:w-56 lg:h-56 bg-gradient-to-tr from-orange-100 to-pink-100 rounded-full opacity-30 -z-10"></div>
         
         {/* Device mockup with loading optimization */}
@@ -411,31 +411,31 @@ function App() {
               <div className="ml-10 flex items-baseline space-x-8">
                 <button 
                   onClick={() => scrollToSection('features')}
-                  className="text-gray-600 hover:text-blue-800 transition-colors px-3 py-2 text-sm font-medium"
+                  className="text-gray-600 hover:text-[#1F3A8A] transition-colors px-3 py-2 text-sm font-medium"
                 >
                   Features
                 </button>
                 <button 
                   onClick={() => scrollToSection('calculator')}
-                  className="text-gray-600 hover:text-blue-800 transition-colors px-3 py-2 text-sm font-medium"
+                  className="text-gray-600 hover:text-[#1F3A8A] transition-colors px-3 py-2 text-sm font-medium"
                 >
                   Calculator
                 </button>
                 <button 
                   onClick={() => scrollToSection('use-cases')}
-                  className="text-gray-600 hover:text-blue-800 transition-colors px-3 py-2 text-sm font-medium"
+                  className="text-gray-600 hover:text-[#1F3A8A] transition-colors px-3 py-2 text-sm font-medium"
                 >
                   Use Cases
                 </button>
                 <button 
                   onClick={() => scrollToSection('reviews')}
-                  className="text-gray-600 hover:text-blue-800 transition-colors px-3 py-2 text-sm font-medium"
+                  className="text-gray-600 hover:text-[#1F3A8A] transition-colors px-3 py-2 text-sm font-medium"
                 >
                   Reviews
                 </button>
                 <button 
                   onClick={() => scrollToSection('security')}
-                  className="text-gray-600 hover:text-blue-800 transition-colors px-3 py-2 text-sm font-medium"
+                  className="text-gray-600 hover:text-[#1F3A8A] transition-colors px-3 py-2 text-sm font-medium"
                 >
                   Security
                 </button>
@@ -444,7 +444,7 @@ function App() {
 
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <button className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors">
+              <button className="bg-[#1F3A8A] hover:bg-[#1e3a8a]/90 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors">
                 Get App
               </button>
             </div>
@@ -453,7 +453,7 @@ function App() {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-600 hover:text-blue-800 transition-colors"
+                className="text-gray-600 hover:text-[#1F3A8A] transition-colors"
               >
                 {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -467,36 +467,36 @@ function App() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               <button 
                 onClick={() => scrollToSection('features')}
-                className="text-gray-600 hover:text-blue-800 block px-3 py-2 text-base font-medium w-full text-left"
+                className="text-gray-600 hover:text-[#1F3A8A] block px-3 py-2 text-base font-medium w-full text-left"
               >
                 Features
               </button>
               <button 
                 onClick={() => scrollToSection('calculator')}
-                className="text-gray-600 hover:text-blue-800 block px-3 py-2 text-base font-medium w-full text-left"
+                className="text-gray-600 hover:text-[#1F3A8A] block px-3 py-2 text-base font-medium w-full text-left"
               >
                 Calculator
               </button>
               <button 
                 onClick={() => scrollToSection('use-cases')}
-                className="text-gray-600 hover:text-blue-800 block px-3 py-2 text-base font-medium w-full text-left"
+                className="text-gray-600 hover:text-[#1F3A8A] block px-3 py-2 text-base font-medium w-full text-left"
               >
                 Use Cases
               </button>
               <button 
                 onClick={() => scrollToSection('reviews')}
-                className="text-gray-600 hover:text-blue-800 block px-3 py-2 text-base font-medium w-full text-left"
+                className="text-gray-600 hover:text-[#1F3A8A] block px-3 py-2 text-base font-medium w-full text-left"
               >
                 Reviews
               </button>
               <button 
                 onClick={() => scrollToSection('security')}
-                className="text-gray-600 hover:text-blue-800 block px-3 py-2 text-base font-medium w-full text-left"
+                className="text-gray-600 hover:text-[#1F3A8A] block px-3 py-2 text-base font-medium w-full text-left"
               >
                 Security
               </button>
               <div className="border-t pt-4 mt-4">
-                <button className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-2 rounded-md text-base font-medium transition-colors w-full">
+                <button className="bg-[#1F3A8A] hover:bg-[#1e3a8a]/90 text-white px-6 py-2 rounded-md text-base font-medium transition-colors w-full">
                   Get App
                 </button>
               </div>
@@ -512,7 +512,7 @@ function App() {
             {/* Text Content */}
             <div className="flex-1 space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1">
               {/* Badge */}
-              <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-md border border-blue-200 text-blue-800 text-xs sm:text-sm font-medium bg-blue-50">
+              <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-md border border-[#1F3A8A]/20 text-[#1F3A8A] text-xs sm:text-sm font-medium bg-[#1F3A8A]/5">
                 <span className="hidden sm:inline">READ OUR COST OF LIVING REPORT 2024</span>
                 <span className="sm:hidden">COST OF LIVING REPORT 2024</span>
                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
@@ -522,7 +522,7 @@ function App() {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   Avoid unnecessary spending;
                   <br />
-                  <span className="text-blue-800">Plan your money</span>
+                  <span className="text-[#1F3A8A]">Plan your money</span>
                 </h1>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
                   Deposit your money, lock it safely, and receive automated payouts while staying in control.
@@ -543,18 +543,18 @@ function App() {
       </section>
 
       {/* How Planmoni Works - Beautiful App Interface Design */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/30">
+      <section className="py-24 bg-gradient-to-br from-gray-50 via-[#1F3A8A]/5 to-[#1F3A8A]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center space-y-6 mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#1F3A8A]/10 text-[#1F3A8A] text-sm font-semibold">
               <Smartphone className="w-4 h-4 mr-2" />
               See How It Works
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
               Three Simple Steps to
               <br />
-              <span className="text-blue-800">Financial Freedom</span>
+              <span className="text-[#1F3A8A]">Financial Freedom</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Experience the power of disciplined spending with our intuitive app interface
@@ -568,8 +568,8 @@ function App() {
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="flex-1 space-y-8 text-center lg:text-left order-2 lg:order-1">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800 text-sm font-bold">
-                    <span className="w-6 h-6 bg-blue-800 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">1</span>
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#1F3A8A]/10 to-[#1F3A8A]/20 text-[#1F3A8A] text-sm font-bold">
+                    <span className="w-6 h-6 bg-[#1F3A8A] text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">1</span>
                     STEP ONE
                   </div>
                   <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
@@ -591,8 +591,8 @@ function App() {
                     </div>
                   </div>
                   <div className="flex items-center space-x-3 p-4 bg-white rounded-xl border border-gray-100">
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <CreditCard className="w-5 h-5 text-blue-600" />
+                    <div className="w-10 h-10 bg-[#1F3A8A]/10 rounded-lg flex items-center justify-center">
+                      <CreditCard className="w-5 h-5 text-[#1F3A8A]" />
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900 text-sm">Multiple Methods</p>
@@ -604,7 +604,7 @@ function App() {
               
               <div className="flex-1 flex justify-center order-1 lg:order-2">
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-200 to-indigo-200 rounded-3xl opacity-20 blur-xl"></div>
+                  <div className="absolute -inset-4 bg-gradient-to-r from-[#1F3A8A]/20 to-[#1F3A8A]/30 rounded-3xl opacity-20 blur-xl"></div>
                   <img 
                     src="/assets/DepositYourMoney.png" 
                     alt="Deposit Money Interface" 
@@ -728,11 +728,11 @@ function App() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 flex items-center space-x-2">
+                <button className="bg-gradient-to-r from-[#1F3A8A] to-[#1e3a8a] hover:from-[#1e3a8a] hover:to-[#1F3A8A] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 flex items-center space-x-2">
                   <Download className="w-5 h-5" />
                   <span>Download Planmoni</span>
                 </button>
-                <button className="text-blue-600 hover:text-blue-700 font-semibold text-lg flex items-center space-x-2 transition-colors">
+                <button className="text-[#1F3A8A] hover:text-[#1e3a8a] font-semibold text-lg flex items-center space-x-2 transition-colors">
                   <span>Watch Demo</span>
                   <ArrowRight className="w-5 h-5" />
                 </button>
@@ -754,7 +754,7 @@ function App() {
             {features.map((feature, index) => (
               <div key={index} className="bg-white p-6 rounded-2xl hover:bg-gray-50 transition-colors group">
                 <div className="space-y-4">
-                  <div className="w-12 h-12 bg-blue-50 rounded-md flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                  <div className="w-12 h-12 bg-[#1F3A8A]/5 rounded-md flex items-center justify-center group-hover:bg-[#1F3A8A]/10 transition-colors">
                     {feature.icon}
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
@@ -770,7 +770,7 @@ function App() {
       <section id="calculator" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-800 text-sm font-medium mb-4">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#1F3A8A]/5 text-[#1F3A8A] text-sm font-medium mb-4">
               <Calculator className="w-4 h-4 mr-2" />
               Financial Planning Tool
             </div>
@@ -781,7 +781,7 @@ function App() {
           </div>
 
           <div className="max-w-6xl mx-auto">
-            <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-3xl p-8 lg:p-12 border border-blue-100">
+            <div className="bg-gradient-to-br from-[#1F3A8A]/5 via-white to-[#1F3A8A]/10 rounded-3xl p-8 lg:p-12 border border-[#1F3A8A]/10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 
                 {/* Input Section */}
@@ -798,7 +798,7 @@ function App() {
                           value={formatNumber(newCalculatorAmount)}
                           onChange={handleNewAmountChange}
                           placeholder="10,000,000"
-                          className="w-full pl-12 pr-4 py-4 text-2xl font-bold text-gray-900 bg-white rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-0 focus:outline-none transition-colors"
+                          className="w-full pl-12 pr-4 py-4 text-2xl font-bold text-gray-900 bg-white rounded-xl border-2 border-gray-200 focus:border-[#1F3A8A] focus:ring-0 focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -810,7 +810,7 @@ function App() {
                       <select
                         value={newCalculatorDuration}
                         onChange={(e) => setNewCalculatorDuration(e.target.value)}
-                        className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-white rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-0 focus:outline-none transition-colors"
+                        className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-white rounded-xl border-2 border-gray-200 focus:border-[#1F3A8A] focus:ring-0 focus:outline-none transition-colors"
                       >
                         <option value="6">6 months</option>
                         <option value="12">12 months</option>
@@ -831,12 +831,12 @@ function App() {
                             onClick={() => setNewCalculatorFrequency(option.id)}
                             className={`flex items-center justify-between p-4 rounded-xl border-2 transition-all ${
                               newCalculatorFrequency === option.id
-                                ? 'border-blue-500 bg-blue-50 text-blue-900'
+                                ? 'border-[#1F3A8A] bg-[#1F3A8A]/5 text-[#1F3A8A]'
                                 : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
                             }`}
                           >
                             <div className="flex items-center space-x-3">
-                              <div className={`${newCalculatorFrequency === option.id ? 'text-blue-600' : 'text-gray-400'}`}>
+                              <div className={`${newCalculatorFrequency === option.id ? 'text-[#1F3A8A]' : 'text-gray-400'}`}>
                                 {option.icon}
                               </div>
                               <span className="font-medium">{option.label}</span>
@@ -854,9 +854,9 @@ function App() {
                 {/* Results Section */}
                 <div className="space-y-6">
                   {/* Main Payout Display */}
-                  <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white">
+                  <div className="bg-gradient-to-br from-[#1F3A8A] to-[#1e3a8a] rounded-2xl p-8 text-white">
                     <div className="text-center space-y-4">
-                      <div className="flex items-center justify-center space-x-2 text-blue-100">
+                      <div className="flex items-center justify-center space-x-2 text-[#1F3A8A]/20">
                         <Wallet className="w-5 h-5" />
                         <span className="text-sm font-medium uppercase tracking-wide">
                           You'll receive {newCalculatorFrequency}
@@ -865,7 +865,7 @@ function App() {
                       <div className="text-4xl lg:text-5xl font-bold">
                         {formatCurrency(getCurrentPayout())}
                       </div>
-                      <div className="text-blue-100 text-sm">
+                      <div className="text-[#1F3A8A]/20 text-sm">
                         For {getCurrentPayoutCount()} payments over {newCalculatorDuration} months
                       </div>
                     </div>
@@ -905,7 +905,7 @@ function App() {
                   </div>
 
                   {/* CTA Button */}
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-4 px-6 rounded-xl font-semibold text-lg transition-all transform hover:scale-105">
+                  <button className="w-full bg-gradient-to-r from-[#1F3A8A] to-[#1e3a8a] hover:from-[#1e3a8a] hover:to-[#1F3A8A] text-white py-4 px-6 rounded-xl font-semibold text-lg transition-all transform hover:scale-105">
                     Start Your Plan
                   </button>
                 </div>
@@ -930,7 +930,7 @@ function App() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                   Ready to start planning your money today?
                   <br />
-                  <span className="text-blue-800">Get the Planmoni app now</span>
+                  <span className="text-[#1F3A8A]">Get the Planmoni app now</span>
                 </h2>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
                   Download the Planmoni app and take control of your finances with our powerful money planning tools.
@@ -955,7 +955,7 @@ function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {useCases.map((useCase, index) => (
-              <div key={index} className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl hover:bg-gradient-to-br hover:from-blue-100 hover:to-indigo-100 transition-all group">
+              <div key={index} className="bg-gradient-to-br from-[#1F3A8A]/5 to-[#1F3A8A]/10 p-8 rounded-2xl hover:bg-gradient-to-br hover:from-[#1F3A8A]/10 hover:to-[#1F3A8A]/20 transition-all group">
                 <div className="space-y-4">
                   <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center group-hover:bg-gray-50 transition-colors">
                     {useCase.icon}
@@ -1052,12 +1052,12 @@ function App() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-r from-blue-800 to-blue-900">
+      <section className="py-20 bg-gradient-to-r from-[#1F3A8A] to-[#1e3a8a]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-3xl sm:text-4xl font-bold text-white">Take Control of Your Money Today</h2>
-              <p className="text-xl text-blue-100">Join thousands who've mastered their spending with Planmoni</p>
+              <p className="text-xl text-[#1F3A8A]/20">Join thousands who've mastered their spending with Planmoni</p>
             </div>
             
             <div className="flex justify-center">
@@ -1084,9 +1084,9 @@ function App() {
                 Put your money on a salary and take control of your spending.
               </p>
               <div className="flex space-x-4">
-                <Twitter className="w-5 h-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
+                <Twitter className="w-5 h-5 text-gray-400 hover:text-[#1F3A8A] cursor-pointer transition-colors" />
                 <Instagram className="w-5 h-5 text-gray-400 hover:text-pink-400 cursor-pointer transition-colors" />
-                <Facebook className="w-5 h-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
+                <Facebook className="w-5 h-5 text-gray-400 hover:text-[#1F3A8A] cursor-pointer transition-colors" />
               </div>
             </div>
 
