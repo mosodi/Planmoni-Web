@@ -343,14 +343,14 @@ function App() {
     const getImageClasses = () => {
       switch (deviceType) {
         case 'ios':
-          // Doubled size for iOS
-          return 'w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl h-auto drop-shadow-2xl';
+          // Doubled size for iOS - removed drop-shadow
+          return 'w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl h-auto';
         case 'android':
-          // Doubled size for Android
-          return 'w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl h-auto drop-shadow-2xl';
+          // Doubled size for Android - removed drop-shadow
+          return 'w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl h-auto';
         default:
-          // Keep web size smaller
-          return 'w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] h-auto drop-shadow-2xl';
+          // Keep web size smaller - removed drop-shadow
+          return 'w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] h-auto';
       }
     };
 
@@ -373,7 +373,7 @@ function App() {
             </div>
           )}
           
-          {/* Optimized image with lazy loading */}
+          {/* Optimized image with lazy loading - no shadows */}
           <img 
             src={getDeviceImage()}
             alt={getDeviceAlt()}
