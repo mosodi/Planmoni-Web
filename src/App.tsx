@@ -542,142 +542,201 @@ function App() {
         </div>
       </section>
 
-      {/* How Planmoni Works - Clean Minimalist Design */}
-      <section className="py-24 bg-white">
+      {/* How Planmoni Works - Beautiful App Interface Design */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center space-y-4 mb-20">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
-              How Planmoni Works
+          <div className="text-center space-y-6 mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold">
+              <Smartphone className="w-4 h-4 mr-2" />
+              See How It Works
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
+              Three Simple Steps to
+              <br />
+              <span className="text-blue-800">Financial Freedom</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Three simple steps to financial discipline
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Experience the power of disciplined spending with our intuitive app interface
             </p>
           </div>
 
-          {/* Steps */}
-          <div className="max-w-5xl mx-auto">
-            <div className="space-y-16 lg:space-y-24">
-              
-              {/* Step 1 */}
-              <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-                <div className="flex-1 text-center lg:text-left order-2 lg:order-1">
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-4">
-                    Step 1
+          {/* Steps with App Screenshots */}
+          <div className="space-y-32">
+            
+            {/* Step 1 - Deposit Your Money */}
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="flex-1 space-y-8 text-center lg:text-left order-2 lg:order-1">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800 text-sm font-bold">
+                    <span className="w-6 h-6 bg-blue-800 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">1</span>
+                    STEP ONE
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                     Deposit Your Money
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                    Lock large sums into Planmoni securely. Your money stays completely safe and untouchable until your scheduled release dates.
+                  <p className="text-xl text-gray-600 leading-relaxed">
+                    Securely add funds to your Planmoni vault using multiple payment methods. Your money is instantly protected from impulsive spending.
                   </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-center lg:justify-start text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>Bank-level security encryption</span>
-                    </div>
-                    <div className="flex items-center justify-center lg:justify-start text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>Multiple payment methods supported</span>
-                    </div>
-                    <div className="flex items-center justify-center lg:justify-start text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>Instant deposit confirmation</span>
-                    </div>
-                  </div>
                 </div>
                 
-                <div className="flex-1 flex justify-center order-1 lg:order-2">
-                  <div className="w-32 h-32 bg-blue-800 rounded-3xl flex items-center justify-center">
-                    <Upload className="w-16 h-16 text-white" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto lg:mx-0">
+                  <div className="flex items-center space-x-3 p-4 bg-white rounded-xl border border-gray-100">
+                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-green-600" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">Bank-Level Security</p>
+                      <p className="text-xs text-gray-600">256-bit encryption</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3 p-4 bg-white rounded-xl border border-gray-100">
+                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <CreditCard className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">Multiple Methods</p>
+                      <p className="text-xs text-gray-600">Cards, banks, USSD</p>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              {/* Step 2 */}
-              <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-                <div className="flex-1 flex justify-center order-1">
-                  <div className="w-32 h-32 bg-purple-600 rounded-3xl flex items-center justify-center">
-                    <Calendar className="w-16 h-16 text-white" />
-                  </div>
+              
+              <div className="flex-1 flex justify-center order-1 lg:order-2">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-200 to-indigo-200 rounded-3xl opacity-20 blur-xl"></div>
+                  <img 
+                    src="/assets/DepositYourMoney.png" 
+                    alt="Deposit Money Interface" 
+                    className="relative w-full max-w-sm h-auto rounded-3xl"
+                  />
                 </div>
-                
-                <div className="flex-1 text-center lg:text-left order-2">
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-sm font-semibold mb-4">
-                    Step 2
+              </div>
+            </div>
+
+            {/* Step 2 - Set Your Payout Plan */}
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="flex-1 flex justify-center order-1">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-purple-200 to-pink-200 rounded-3xl opacity-20 blur-xl"></div>
+                  <img 
+                    src="/assets/SetYourPayoutPlan.png" 
+                    alt="Set Payout Plan Interface" 
+                    className="relative w-full max-w-sm h-auto rounded-3xl"
+                  />
+                </div>
+              </div>
+              
+              <div className="flex-1 space-y-8 text-center lg:text-left order-2">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-purple-200 text-purple-800 text-sm font-bold">
+                    <span className="w-6 h-6 bg-purple-800 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">2</span>
+                    STEP TWO
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                     Set Your Payout Plan
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                    Choose exactly how much you receive and when. Create your own personalized salary schedule that fits your lifestyle perfectly.
+                  <p className="text-xl text-gray-600 leading-relaxed">
+                    Choose your payout frequency and amounts. Create a personalized salary schedule that fits your lifestyle and financial goals perfectly.
                   </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-center lg:justify-start text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>Flexible frequency options</span>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto lg:mx-0">
+                  <div className="flex items-center space-x-3 p-4 bg-white rounded-xl border border-gray-100">
+                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                      <Calendar className="w-5 h-5 text-purple-600" />
                     </div>
-                    <div className="flex items-center justify-center lg:justify-start text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>Customizable payout amounts</span>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">Flexible Schedule</p>
+                      <p className="text-xs text-gray-600">Weekly to monthly</p>
                     </div>
-                    <div className="flex items-center justify-center lg:justify-start text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>Easy schedule modifications</span>
+                  </div>
+                  <div className="flex items-center space-x-3 p-4 bg-white rounded-xl border border-gray-100">
+                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                      <Settings className="w-5 h-5 text-green-600" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">Full Control</p>
+                      <p className="text-xs text-gray-600">Modify anytime</p>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Step 3 */}
-              <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-                <div className="flex-1 text-center lg:text-left order-2 lg:order-1">
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm font-semibold mb-4">
-                    Step 3
+            {/* Step 3 - Stay Disciplined */}
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="flex-1 space-y-8 text-center lg:text-left order-2 lg:order-1">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-100 to-green-200 text-green-800 text-sm font-bold">
+                    <span className="w-6 h-6 bg-green-800 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">3</span>
+                    STEP THREE
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                     Stay Disciplined
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                    Money is released only on your schedule. No impulse spending, no temptation - just complete financial control and peace of mind.
+                  <p className="text-xl text-gray-600 leading-relaxed">
+                    Receive automated payouts on schedule. Your money is released only when planned, ensuring complete financial discipline and peace of mind.
                   </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-center lg:justify-start text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>Automated scheduled releases</span>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto lg:mx-0">
+                  <div className="flex items-center space-x-3 p-4 bg-white rounded-xl border border-gray-100">
+                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                      <Clock className="w-5 h-5 text-green-600" />
                     </div>
-                    <div className="flex items-center justify-center lg:justify-start text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>Emergency access when needed</span>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">Auto Payouts</p>
+                      <p className="text-xs text-gray-600">On your schedule</p>
                     </div>
-                    <div className="flex items-center justify-center lg:justify-start text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>Complete spending control</span>
+                  </div>
+                  <div className="flex items-center space-x-3 p-4 bg-white rounded-xl border border-gray-100">
+                    <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                      <AlertCircle className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm">Emergency Access</p>
+                      <p className="text-xs text-gray-600">When you need it</p>
                     </div>
                   </div>
                 </div>
-                
-                <div className="flex-1 flex justify-center order-1 lg:order-2">
-                  <div className="w-32 h-32 bg-green-600 rounded-3xl flex items-center justify-center">
-                    <Shield className="w-16 h-16 text-white" />
-                  </div>
+              </div>
+              
+              <div className="flex-1 flex justify-center order-1 lg:order-2">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-green-200 to-emerald-200 rounded-3xl opacity-20 blur-xl"></div>
+                  <img 
+                    src="/assets/StayDisciplined.png" 
+                    alt="Stay Disciplined Interface" 
+                    className="relative w-full max-w-sm h-auto rounded-3xl"
+                  />
                 </div>
               </div>
             </div>
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-20">
-            <div className="max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Ready to take control of your finances?
-              </h3>
-              <p className="text-gray-600 mb-8">
-                Join thousands who've transformed their spending habits with Planmoni
-              </p>
-              <button className="bg-blue-800 hover:bg-blue-900 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors">
-                Get Started Today
-              </button>
+          <div className="text-center mt-32">
+            <div className="max-w-4xl mx-auto space-y-8">
+              <div className="space-y-6">
+                <h3 className="text-3xl lg:text-4xl font-bold text-gray-900">
+                  Ready to Transform Your Financial Habits?
+                </h3>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Join thousands who've mastered their spending with Planmoni's proven three-step system
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 flex items-center space-x-2">
+                  <Download className="w-5 h-5" />
+                  <span>Download Planmoni</span>
+                </button>
+                <button className="text-blue-600 hover:text-blue-700 font-semibold text-lg flex items-center space-x-2 transition-colors">
+                  <span>Watch Demo</span>
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
