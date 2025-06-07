@@ -319,11 +319,11 @@ function App() {
     const getDeviceImage = () => {
       switch (deviceType) {
         case 'ios':
-          return '/public/ios.png';
+          return '/ios.png';
         case 'android':
-          return '/public/Android.png';
+          return '/Android.png';
         default:
-          return '/public/Web.png';
+          return '/Web.png';
       }
     };
 
