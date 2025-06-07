@@ -131,14 +131,14 @@ function App() {
     {
       name: "Sarah M.",
       role: "University Student",
-      content: "I finally stopped spending rent money by mistake. PayVault saved my semester!",
+      content: "I finally stopped spending rent money by mistake. Planmoni saved my semester!",
       rating: 5,
       avatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
     {
       name: "Mike R.",
       role: "Freelance Designer",
-      content: "Years like paying myself every month. Perfect for managing irregular income!",
+      content: "It's like paying myself every month. Perfect for managing irregular income!",
       rating: 5,
       avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
@@ -1010,7 +1010,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Perfect For</h2>
-            <p className="text-xl text-gray-600">See how PayVault fits your lifestyle</p>
+            <p className="text-xl text-gray-600">See how Planmoni fits your lifestyle</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
