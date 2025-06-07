@@ -40,7 +40,8 @@ import {
   ChevronRight,
   Percent,
   TrendingDown,
-  Monitor
+  Monitor,
+  ArrowDown
 } from 'lucide-react';
 
 function App() {
@@ -541,37 +542,173 @@ function App() {
         </div>
       </section>
 
-      {/* How Planmoni Works */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">How Planmoni Works</h2>
-            <p className="text-xl text-gray-600">Three simple steps to financial discipline</p>
+      {/* How Planmoni Works - Redesigned */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/30 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-100/40 to-transparent rounded-full -translate-x-48 -translate-y-48"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-indigo-100/40 to-transparent rounded-full translate-x-48 translate-y-48"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          {/* Header */}
+          <div className="text-center space-y-6 mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold mb-4">
+              <Zap className="w-4 h-4 mr-2" />
+              Simple Process
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+              How <span className="text-blue-800">Planmoni</span> Works
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Transform your financial habits with our simple three-step process designed for maximum discipline and control
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-                <Upload className="w-8 h-8 text-blue-800" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900">Deposit Your Money</h3>
-              <p className="text-gray-600">Lock large sums into Planmoni securely. Your money stays safe and untouchable.</p>
-            </div>
+          {/* Steps */}
+          <div className="relative">
+            {/* Connection lines for desktop */}
+            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-blue-300 to-blue-200 transform -translate-y-1/2 z-0"></div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 relative z-10">
+              {/* Step 1 */}
+              <div className="relative group">
+                <div className="text-center space-y-6">
+                  {/* Step number and icon container */}
+                  <div className="relative mx-auto">
+                    {/* Step number badge */}
+                    <div className="absolute -top-3 -right-3 w-8 h-8 bg-blue-800 text-white rounded-full flex items-center justify-center text-sm font-bold z-20">
+                      1
+                    </div>
+                    
+                    {/* Icon container with enhanced styling */}
+                    <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl">
+                      <Upload className="w-12 h-12 text-white" />
+                    </div>
+                    
+                    {/* Decorative ring */}
+                    <div className="absolute inset-0 w-24 h-24 border-4 border-blue-200 rounded-2xl mx-auto animate-pulse"></div>
+                  </div>
 
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto">
-                <Calendar className="w-8 h-8 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900">Set Your Payout Plan</h3>
-              <p className="text-gray-600">Choose how much you receive monthly. Create your own salary schedule.</p>
-            </div>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-gray-900">Deposit Your Money</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Securely lock large sums into Planmoni. Your money stays completely safe and untouchable until your scheduled release dates.
+                    </p>
+                    
+                    {/* Feature highlights */}
+                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 space-y-2">
+                      <div className="flex items-center text-sm text-gray-700">
+                        <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
+                        Bank-level security
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700">
+                        <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
+                        Multiple payment methods
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
-                <CheckCircle className="w-8 h-8 text-green-600" />
+                {/* Arrow connector for mobile */}
+                <div className="lg:hidden flex justify-center mt-8">
+                  <ArrowDown className="w-6 h-6 text-blue-400" />
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Stay Disciplined</h3>
-              <p className="text-gray-600">Money is released only on schedule. No impulse spending, just financial control.</p>
+
+              {/* Step 2 */}
+              <div className="relative group">
+                <div className="text-center space-y-6">
+                  {/* Step number and icon container */}
+                  <div className="relative mx-auto">
+                    {/* Step number badge */}
+                    <div className="absolute -top-3 -right-3 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold z-20">
+                      2
+                    </div>
+                    
+                    {/* Icon container with enhanced styling */}
+                    <div className="w-24 h-24 bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl">
+                      <Calendar className="w-12 h-12 text-white" />
+                    </div>
+                    
+                    {/* Decorative ring */}
+                    <div className="absolute inset-0 w-24 h-24 border-4 border-purple-200 rounded-2xl mx-auto animate-pulse"></div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-gray-900">Set Your Payout Plan</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Choose exactly how much you receive and when. Create your own personalized salary schedule that fits your lifestyle.
+                    </p>
+                    
+                    {/* Feature highlights */}
+                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 space-y-2">
+                      <div className="flex items-center text-sm text-gray-700">
+                        <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
+                        Flexible frequency options
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700">
+                        <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
+                        Customizable amounts
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Arrow connector for mobile */}
+                <div className="lg:hidden flex justify-center mt-8">
+                  <ArrowDown className="w-6 h-6 text-blue-400" />
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="relative group">
+                <div className="text-center space-y-6">
+                  {/* Step number and icon container */}
+                  <div className="relative mx-auto">
+                    {/* Step number badge */}
+                    <div className="absolute -top-3 -right-3 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold z-20">
+                      3
+                    </div>
+                    
+                    {/* Icon container with enhanced styling */}
+                    <div className="w-24 h-24 bg-gradient-to-br from-green-600 to-green-700 rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl">
+                      <Shield className="w-12 h-12 text-white" />
+                    </div>
+                    
+                    {/* Decorative ring */}
+                    <div className="absolute inset-0 w-24 h-24 border-4 border-green-200 rounded-2xl mx-auto animate-pulse"></div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-gray-900">Stay Disciplined</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Money is released only on your schedule. No impulse spending, no temptation - just complete financial control and discipline.
+                    </p>
+                    
+                    {/* Feature highlights */}
+                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 space-y-2">
+                      <div className="flex items-center text-sm text-gray-700">
+                        <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
+                        Automated releases
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700">
+                        <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
+                        Emergency access available
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto border border-white/20">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to take control?</h3>
+              <p className="text-gray-600 mb-6">Join thousands who've transformed their spending habits with Planmoni</p>
+              <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                Start Your Journey
+              </button>
             </div>
           </div>
         </div>
