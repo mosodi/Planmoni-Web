@@ -513,8 +513,8 @@ function App() {
             <div className="flex-1 space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1">
               {/* Badge */}
               <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-md border border-[#1F3A8A]/20 text-[#1F3A8A] text-xs sm:text-sm font-medium bg-[#1F3A8A]/5">
-                <span className="hidden sm:inline">READ OUR COST OF LIVING REPORT 2024</span>
-                <span className="sm:hidden">COST OF LIVING REPORT 2024</span>
+                <span className="hidden sm:inline">🎉 PLANMONI APP V.3.2 IS LIVE</span>
+                <span className="sm:hidden">🎉 PLANMONI APP V.3.2 IS LIVE</span>
                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
               </div>
               
