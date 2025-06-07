@@ -340,17 +340,16 @@ function App() {
 
     return (
       <div className="relative flex justify-center items-center">
-        {/* Enhanced background decorative elements with elevation */}
-        <div className="absolute top-0 right-0 w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full opacity-40 -z-10 shadow-lg"></div>
-        <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-gradient-to-tr from-orange-100 to-pink-100 rounded-full opacity-40 -z-10 shadow-lg"></div>
+        {/* Background decorative elements */}
+        <div className="absolute top-0 right-0 w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full opacity-30 -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-gradient-to-tr from-orange-100 to-pink-100 rounded-full opacity-30 -z-10"></div>
         
-        {/* Device mockup with enhanced elevation */}
-        <div className="relative transform hover:scale-105 transition-transform duration-300">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl blur-xl transform scale-110 -z-10"></div>
+        {/* Device mockup - significantly reduced size */}
+        <div className="relative">
           <img 
             src={getDeviceImage()}
             alt={getDeviceAlt()}
-            className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] h-auto drop-shadow-2xl shadow-2xl rounded-2xl relative z-10"
+            className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] h-auto drop-shadow-2xl"
           />
         </div>
       </div>
@@ -360,7 +359,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white/95 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50 shadow-sm">
+      <nav className="bg-white border-b sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -412,7 +411,7 @@ function App() {
 
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <button className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-2 rounded-md text-sm font-medium transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
+              <button className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors">
                 Get App
               </button>
             </div>
@@ -432,7 +431,7 @@ function App() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-md border-t border-gray-200/50 shadow-lg">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               <button 
                 onClick={() => scrollToSection('features')}
                 className="text-gray-600 hover:text-blue-800 block px-3 py-2 text-base font-medium w-full text-left"
@@ -464,7 +463,7 @@ function App() {
                 Security
               </button>
               <div className="border-t pt-4 mt-4">
-                <button className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-2 rounded-md text-base font-medium transition-all w-full shadow-lg">
+                <button className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-2 rounded-md text-base font-medium transition-colors w-full">
                   Get App
                 </button>
               </div>
@@ -473,61 +472,38 @@ function App() {
         )}
       </nav>
 
-      {/* Hero Section with Enhanced Elevation */}
-      <section className="relative bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50 overflow-hidden">
-        {/* Elevated background elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5"></div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-tr from-purple-400/10 to-pink-400/10 rounded-full blur-3xl"></div>
-        
-        {/* Floating geometric shapes for depth */}
-        <div className="absolute top-20 right-10 w-4 h-4 bg-blue-400/20 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 left-10 w-6 h-6 bg-purple-400/20 rounded-full animate-pulse delay-1000"></div>
-        <div className="absolute bottom-40 right-20 w-3 h-3 bg-indigo-400/20 rounded-full animate-pulse delay-2000"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
+      {/* Hero Section */}
+      <section className="relative bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-            {/* Text Content with Enhanced Elevation */}
-            <div className="flex-1 space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1 relative z-10">
-              {/* Badge with elevation */}
-              <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-md border border-blue-200/50 text-blue-800 text-xs sm:text-sm font-medium bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+            {/* Text Content */}
+            <div className="flex-1 space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1">
+              {/* Badge */}
+              <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-md border border-blue-200 text-blue-800 text-xs sm:text-sm font-medium bg-blue-50">
                 <span className="hidden sm:inline">READ OUR COST OF LIVING REPORT 2024</span>
                 <span className="sm:hidden">COST OF LIVING REPORT 2024</span>
                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
               </div>
               
               <div className="space-y-4 lg:space-y-6">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight drop-shadow-sm">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   Avoid unnecessary spending;
                   <br />
-                  <span className="text-blue-800 bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent">Plan your money</span>
+                  <span className="text-blue-800">Plan your money</span>
                 </h1>
-                <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0 drop-shadow-sm">
+                <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
                   Deposit your money, lock it safely, and receive automated payouts while staying in control.
                 </p>
               </div>
               
               <div className="flex justify-center lg:justify-start">
-                <div className="transform hover:scale-105 transition-transform duration-300 drop-shadow-lg">
-                  <DownloadButton />
-                </div>
+                <DownloadButton />
               </div>
             </div>
 
-            {/* Enhanced Device Mockup with Superior Elevation */}
+            {/* Clean Device Mockup */}
             <div className="flex-1 relative justify-center order-1 lg:order-2 w-full max-w-lg lg:max-w-none">
-              <div className="relative">
-                {/* Multiple layered shadows for depth */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl blur-2xl transform scale-110 -z-20"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/15 to-indigo-500/15 rounded-3xl blur-xl transform scale-105 -z-10"></div>
-                
-                {/* Enhanced floating elements around the device */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full shadow-lg opacity-80 animate-bounce"></div>
-                <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full shadow-lg opacity-80 animate-bounce delay-1000"></div>
-                <div className="absolute top-1/2 -right-8 w-4 h-4 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full shadow-lg opacity-80 animate-bounce delay-2000"></div>
-                
-                <DeviceMockup />
-              </div>
+              <DeviceMockup />
             </div>
           </div>
         </div>
