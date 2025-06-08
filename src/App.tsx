@@ -777,7 +777,7 @@ function App() {
         </div>
       </section>
 
-      {/* Payout Calculator Section */}
+      {/* Payout Calculator Section - Redesigned */}
       <section id="calculator" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
@@ -791,12 +791,12 @@ function App() {
             </p>
           </div>
 
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-gradient-to-br from-[#1F3A8A]/5 via-white to-[#1F3A8A]/10 rounded-3xl p-8 lg:p-12 border border-[#1F3A8A]/10">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-xl">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
                 
-                {/* Input Section */}
-                <div className="space-y-8">
+                {/* Input Section - Left Column */}
+                <div className="lg:col-span-1 space-y-8">
                   <div className="space-y-6">
                     <div>
                       <label className="block text-sm font-semibold text-gray-900 mb-3">
@@ -809,7 +809,7 @@ function App() {
                           value={formatNumber(newCalculatorAmount)}
                           onChange={handleNewAmountChange}
                           placeholder="10,000,000"
-                          className="w-full pl-12 pr-4 py-4 text-2xl font-bold text-gray-900 bg-white rounded-xl border-2 border-gray-200 focus:border-[#1F3A8A] focus:ring-0 focus:outline-none transition-colors"
+                          className="w-full pl-12 pr-4 py-4 text-2xl font-bold text-gray-900 bg-white rounded-xl border-2 border-gray-200 focus:border-[#1F3A8A] focus:ring-0 focus:outline-none transition-colors shadow-sm"
                         />
                       </div>
                     </div>
@@ -821,7 +821,7 @@ function App() {
                       <select
                         value={newCalculatorDuration}
                         onChange={(e) => setNewCalculatorDuration(e.target.value)}
-                        className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-white rounded-xl border-2 border-gray-200 focus:border-[#1F3A8A] focus:ring-0 focus:outline-none transition-colors"
+                        className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-white rounded-xl border-2 border-gray-200 focus:border-[#1F3A8A] focus:ring-0 focus:outline-none transition-colors shadow-sm"
                       >
                         <option value="6">6 months</option>
                         <option value="12">12 months</option>
@@ -835,15 +835,15 @@ function App() {
                       <label className="block text-sm font-semibold text-gray-900 mb-3">
                         Payout Frequency
                       </label>
-                      <div className="grid grid-cols-1 gap-3">
+                      <div className="space-y-3">
                         {frequencyOptions.map((option) => (
                           <button
                             key={option.id}
                             onClick={() => setNewCalculatorFrequency(option.id)}
-                            className={`flex items-center justify-between p-4 rounded-xl border-2 transition-all ${
+                            className={`w-full flex items-center justify-between p-4 rounded-xl border-2 transition-all ${
                               newCalculatorFrequency === option.id
-                                ? 'border-[#1F3A8A] bg-[#1F3A8A]/5 text-[#1F3A8A]'
-                                : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
+                                ? 'border-[#1F3A8A] bg-[#1F3A8A]/5 text-[#1F3A8A] shadow-md'
+                                : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 shadow-sm'
                             }`}
                           >
                             <div className="flex items-center space-x-3">
@@ -862,62 +862,95 @@ function App() {
                   </div>
                 </div>
 
-                {/* Results Section */}
-                <div className="space-y-6">
-                  {/* Main Payout Display - Left Aligned */}
-                  <div className="bg-gradient-to-br from-[#1F3A8A] to-[#1e3a8a] rounded-2xl p-8 text-white">
-                    <div className="text-left space-y-4">
-                      <div className="flex items-center space-x-2 text-[#1F3A8A]/20">
-                        <Wallet className="w-5 h-5" />
-                        <span className="text-sm font-medium uppercase tracking-wide">
-                          You'll receive {getFrequencyLabel()}
-                        </span>
-                      </div>
-                      <div className="text-4xl lg:text-5xl font-bold">
-                        {formatCurrency(getCurrentPayout())}
-                      </div>
-                      <div className="text-[#1F3A8A]/20 text-sm">
-                        {getCurrentPayoutCount()} {getFrequencyLabel()} payments of {formatCurrency(getCurrentPayout())} each
+                {/* Main Result Display - Center Column */}
+                <div className="lg:col-span-1 flex items-center justify-center">
+                  <div className="w-full max-w-md">
+                    <div className="bg-gradient-to-br from-[#1F3A8A] to-[#1e3a8a] rounded-3xl p-8 text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                      <div className="text-center space-y-6">
+                        <div className="space-y-2">
+                          <div className="flex items-center justify-center space-x-2 text-white/60">
+                            <Wallet className="w-5 h-5" />
+                            <span className="text-sm font-medium uppercase tracking-wide">
+                              You'll receive {getFrequencyLabel()}
+                            </span>
+                          </div>
+                          <div className="text-5xl lg:text-6xl font-bold leading-none">
+                            {formatCurrency(getCurrentPayout())}
+                          </div>
+                        </div>
+                        
+                        <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                          <div className="text-white/80 text-sm font-medium mb-1">Total Payments</div>
+                          <div className="text-2xl font-bold text-white">
+                            {getCurrentPayoutCount()} payments
+                          </div>
+                          <div className="text-white/60 text-xs mt-1">
+                            Over {newCalculatorDuration} months
+                          </div>
+                        </div>
+
+                        <div className="pt-4 border-t border-white/20">
+                          <div className="text-white/60 text-sm">
+                            {getCurrentPayoutCount()} {getFrequencyLabel()} payments of {formatCurrency(getCurrentPayout())} each
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  {/* Summary Card */}
-                  <div className="bg-white rounded-xl p-6 border border-gray-200">
-                    <div className="flex items-center space-x-2 text-gray-600 mb-2">
-                      <PiggyBank className="w-4 h-4" />
-                      <span className="text-sm font-medium">Total Locked</span>
-                    </div>
-                    <div className="text-2xl font-bold text-gray-900">
-                      {formatCurrency(newPayouts.totalAmount)}
+                {/* Summary & Details - Right Column */}
+                <div className="lg:col-span-1 space-y-6">
+                  {/* Total Locked Summary */}
+                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
+                    <div className="flex items-center space-x-3 mb-3">
+                      <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                        <PiggyBank className="w-5 h-5 text-green-600" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-medium text-green-800">Total Locked</div>
+                        <div className="text-2xl font-bold text-green-900">
+                          {formatCurrency(newPayouts.totalAmount)}
+                        </div>
+                      </div>
                     </div>
                   </div>
 
                   {/* All Frequency Options */}
-                  <div className="bg-gray-50 rounded-xl p-6">
+                  <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
                     <h4 className="text-sm font-semibold text-gray-900 mb-4 flex items-center">
                       <Info className="w-4 h-4 mr-2" />
                       All Payout Options
                     </h4>
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-600">Monthly</span>
-                        <span className="font-semibold text-gray-900">{formatCurrency(newPayouts.monthly)}</span>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center py-3 px-4 bg-white rounded-lg border border-gray-100">
+                        <div className="flex items-center space-x-3">
+                          <Calendar className="w-4 h-4 text-gray-400" />
+                          <span className="text-gray-700 font-medium">Monthly</span>
+                        </div>
+                        <span className="font-bold text-gray-900">{formatCurrency(newPayouts.monthly)}</span>
                       </div>
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-600">Bi-weekly</span>
-                        <span className="font-semibold text-gray-900">{formatCurrency(newPayouts.biweekly)}</span>
+                      <div className="flex justify-between items-center py-3 px-4 bg-white rounded-lg border border-gray-100">
+                        <div className="flex items-center space-x-3">
+                          <Clock className="w-4 h-4 text-gray-400" />
+                          <span className="text-gray-700 font-medium">Bi-weekly</span>
+                        </div>
+                        <span className="font-bold text-gray-900">{formatCurrency(newPayouts.biweekly)}</span>
                       </div>
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-600">Weekly</span>
-                        <span className="font-semibold text-gray-900">{formatCurrency(newPayouts.weekly)}</span>
+                      <div className="flex justify-between items-center py-3 px-4 bg-white rounded-lg border border-gray-100">
+                        <div className="flex items-center space-x-3">
+                          <Zap className="w-4 h-4 text-gray-400" />
+                          <span className="text-gray-700 font-medium">Weekly</span>
+                        </div>
+                        <span className="font-bold text-gray-900">{formatCurrency(newPayouts.weekly)}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* CTA Button */}
-                  <button className="w-full bg-gradient-to-r from-[#1F3A8A] to-[#1e3a8a] hover:from-[#1e3a8a] hover:to-[#1F3A8A] text-white py-4 px-6 rounded-xl font-semibold text-lg transition-all transform hover:scale-105">
-                    Start Your Plan
+                  <button className="w-full bg-gradient-to-r from-[#1F3A8A] to-[#1e3a8a] hover:from-[#1e3a8a] hover:to-[#1F3A8A] text-white py-4 px-6 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2">
+                    <Download className="w-5 h-5" />
+                    <span>Start Your Plan</span>
                   </button>
                 </div>
               </div>
