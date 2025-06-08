@@ -567,7 +567,7 @@ function App() {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   This app will help you
                   <br />
-                  <span className="text-[#1F3A8A]">stabilize cash flow</span>
+                  <span className="text-[#1F3A8A]">stabilize your cash flow</span>
                 </h1>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
                   Join millions of users managing irregular incomes and making timely payments such as salaries, rent, and more with Planmoni
