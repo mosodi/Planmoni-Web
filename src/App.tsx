@@ -978,26 +978,6 @@ function App() {
       </section>
 
       {/* Perfect For */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Perfect For</h2>
-            <p className="text-xl text-gray-600">See how Planmoni fits your lifestyle</p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {perfectForCategories.map((category, index) => (
-              <div key={index} className="text-center space-y-4 p-6 rounded-2xl hover:bg-gray-50 transition-colors">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto">
-                  {category.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">{category.title}</h3>
-                <p className="text-gray-600">{category.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Bank-Level Security */}
       <section id="security" className="py-20 bg-gray-50">
