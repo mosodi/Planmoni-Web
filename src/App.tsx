@@ -525,7 +525,7 @@ function App() {
                   <span className="text-[#1F3A8A]">stabilize cashflow</span>
                 </h1>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                  Deposit your money, lock it safely, and receive automated payouts while staying in control.
+                  Put some money aside, get paid on a schedule, Great for handling unpredictable income and staying on top of things like rent, salaries, and bills.
                 </p>
               </div>
               
