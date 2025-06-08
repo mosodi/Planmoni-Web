@@ -283,6 +283,22 @@ function App() {
     }
   };
 
+  // Responsive text sizing based on amount length
+  const getResponsiveTextSize = (amount: number) => {
+    const amountString = formatCurrency(amount);
+    const length = amountString.length;
+    
+    if (length <= 10) {
+      return 'text-5xl lg:text-6xl'; // Normal size for smaller amounts
+    } else if (length <= 15) {
+      return 'text-4xl lg:text-5xl'; // Medium size
+    } else if (length <= 20) {
+      return 'text-3xl lg:text-4xl'; // Smaller size
+    } else {
+      return 'text-2xl lg:text-3xl'; // Smallest size for very large amounts
+    }
+  };
+
   // Dynamic download button component
   const DownloadButton = ({ className = "" }: { className?: string }) => {
     if (deviceType === 'ios') {
@@ -865,23 +881,23 @@ function App() {
                 {/* Main Result Display - Center Column */}
                 <div className="lg:col-span-1 flex items-center justify-center">
                   <div className="w-full max-w-md">
-                    <div className="bg-gradient-to-br from-[#1F3A8A] to-[#1e3a8a] rounded-3xl p-8 text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                      <div className="text-center space-y-6">
+                    <div className="bg-gradient-to-br from-[#1F3A8A] to-[#1e3a8a] rounded-3xl p-6 lg:p-8 text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                      <div className="text-center space-y-4 lg:space-y-6">
                         <div className="space-y-2">
                           <div className="flex items-center justify-center space-x-2 text-white/60">
-                            <Wallet className="w-5 h-5" />
-                            <span className="text-sm font-medium uppercase tracking-wide">
+                            <Wallet className="w-4 h-4 lg:w-5 lg:h-5" />
+                            <span className="text-xs lg:text-sm font-medium uppercase tracking-wide">
                               You'll receive {getFrequencyLabel()}
                             </span>
                           </div>
-                          <div className="text-5xl lg:text-6xl font-bold leading-none">
+                          <div className={`${getResponsiveTextSize(getCurrentPayout())} font-bold leading-none break-words`}>
                             {formatCurrency(getCurrentPayout())}
                           </div>
                         </div>
                         
-                        <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
-                          <div className="text-white/80 text-sm font-medium mb-1">Total Payments</div>
-                          <div className="text-2xl font-bold text-white">
+                        <div className="bg-white/10 rounded-xl p-3 lg:p-4 backdrop-blur-sm">
+                          <div className="text-white/80 text-xs lg:text-sm font-medium mb-1">Total Payments</div>
+                          <div className="text-xl lg:text-2xl font-bold text-white">
                             {getCurrentPayoutCount()} payments
                           </div>
                           <div className="text-white/60 text-xs mt-1">
@@ -889,8 +905,8 @@ function App() {
                           </div>
                         </div>
 
-                        <div className="pt-4 border-t border-white/20">
-                          <div className="text-white/60 text-sm">
+                        <div className="pt-3 lg:pt-4 border-t border-white/20">
+                          <div className="text-white/60 text-xs lg:text-sm break-words">
                             {getCurrentPayoutCount()} {getFrequencyLabel()} payments of {formatCurrency(getCurrentPayout())} each
                           </div>
                         </div>
@@ -909,7 +925,7 @@ function App() {
                       </div>
                       <div>
                         <div className="text-sm font-medium text-green-800">Total Locked</div>
-                        <div className="text-2xl font-bold text-green-900">
+                        <div className="text-2xl font-bold text-green-900 break-words">
                           {formatCurrency(newPayouts.totalAmount)}
                         </div>
                       </div>
@@ -928,21 +944,21 @@ function App() {
                           <Calendar className="w-4 h-4 text-gray-400" />
                           <span className="text-gray-700 font-medium">Monthly</span>
                         </div>
-                        <span className="font-bold text-gray-900">{formatCurrency(newPayouts.monthly)}</span>
+                        <span className="font-bold text-gray-900 text-sm break-words">{formatCurrency(newPayouts.monthly)}</span>
                       </div>
                       <div className="flex justify-between items-center py-3 px-4 bg-white rounded-lg border border-gray-100">
                         <div className="flex items-center space-x-3">
                           <Clock className="w-4 h-4 text-gray-400" />
                           <span className="text-gray-700 font-medium">Bi-weekly</span>
                         </div>
-                        <span className="font-bold text-gray-900">{formatCurrency(newPayouts.biweekly)}</span>
+                        <span className="font-bold text-gray-900 text-sm break-words">{formatCurrency(newPayouts.biweekly)}</span>
                       </div>
                       <div className="flex justify-between items-center py-3 px-4 bg-white rounded-lg border border-gray-100">
                         <div className="flex items-center space-x-3">
                           <Zap className="w-4 h-4 text-gray-400" />
                           <span className="text-gray-700 font-medium">Weekly</span>
                         </div>
-                        <span className="font-bold text-gray-900">{formatCurrency(newPayouts.weekly)}</span>
+                        <span className="font-bold text-gray-900 text-sm break-words">{formatCurrency(newPayouts.weekly)}</span>
                       </div>
                     </div>
                   </div>
