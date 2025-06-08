@@ -575,7 +575,7 @@ function App() {
                     STEP ONE
                   </div>
                   <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                    Deposit Your Money
+                    Set money aside
                   </h3>
                   <p className="text-xl text-gray-600 leading-relaxed">
                     Securely add funds to your Planmoni vault using multiple payment methods. Your money is instantly protected from impulsive spending.
@@ -636,7 +636,7 @@ function App() {
                     STEP TWO
                   </div>
                   <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                    Set Your Payout Plan
+                    Get it back according to your schedule.
                   </h3>
                   <p className="text-xl text-gray-600 leading-relaxed">
                     Choose your payout frequency and amounts. Create a personalized salary schedule that fits your lifestyle and financial goals perfectly.
