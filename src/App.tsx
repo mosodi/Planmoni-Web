@@ -147,6 +147,11 @@ function App() {
       icon: <Building className="w-12 h-12 text-teal-600" />,
       title: "The Small Business Owner",
       description: "You receive payments from clients at different times, but you still need to pay staff, rent, and suppliers on a regular schedule. Planmoni helps you set money aside and release it when it's needed — keeping your business running smoothly without overspending."
+    },
+    {
+      icon: <DollarSign className="w-12 h-12 text-indigo-600" />,
+      title: "The Salary Earner Trying to Save Smarter",
+      description: "You get paid monthly, but by mid-month, the money's gone. With Planmoni, you can break your salary into weekly or biweekly payouts — helping you pace your spending and actually make it to the end of the month."
     }
   ];
 
