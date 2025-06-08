@@ -647,7 +647,7 @@ function App() {
           <div className="text-center space-y-6 mb-20">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#1F3A8A]/10 text-[#1F3A8A] text-sm font-semibold">
               <Users className="w-4 h-4 mr-2" />
-              Real Life Solutions
+              Our Solution
             </div>
             <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               Built for real life
