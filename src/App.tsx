@@ -636,7 +636,7 @@ function App() {
                     STEP TWO
                   </div>
                   <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                    Get it back according to your schedule.
+                    Create your payout plan.
                   </h3>
                   <p className="text-xl text-gray-600 leading-relaxed">
                     Choose your payout frequency and amounts. Create a personalized salary schedule that fits your lifestyle and financial goals perfectly.
@@ -675,7 +675,7 @@ function App() {
                     STEP THREE
                   </div>
                   <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                    Stay Disciplined
+                    Get it back according to your schedule.
                   </h3>
                   <p className="text-xl text-gray-600 leading-relaxed">
                     Receive automated payouts on schedule. Your money is released only when planned, ensuring complete financial discipline and peace of mind.
