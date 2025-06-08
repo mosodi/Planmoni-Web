@@ -41,7 +41,11 @@ import {
   Percent,
   TrendingDown,
   Monitor,
-  ArrowDown
+  ArrowDown,
+  Home,
+  ShoppingCart,
+  Heart,
+  Coffee
 } from 'lucide-react';
 
 function App() {
@@ -101,29 +105,68 @@ function App() {
 
   const useCases = [
     {
-      icon: <GraduationCap className="w-12 h-12 text-[#1F3A8A]" />,
-      title: "Tuition & Rent Savings",
-      description: "For students managing school fees and rent payments with scheduled releases."
+      icon: <TrendingUp className="w-12 h-12 text-[#1F3A8A]" />,
+      title: "The Irregular Earner",
+      subtitle: "(Entrepreneur / Freelancer)",
+      description: "You make money in bursts — some months are good, others not so much. Planmoni helps you stretch those good months by paying you gradually.",
+      bgColor: "from-[#1F3A8A]/5 to-[#1F3A8A]/10",
+      iconBg: "bg-[#1F3A8A]/10"
     },
     {
-      icon: <Users className="w-12 h-12 text-[#1F3A8A]" />,
-      title: "Family Budgeting",
-      description: "Help parents schedule and protect family funds for important expenses."
+      icon: <GraduationCap className="w-12 h-12 text-green-600" />,
+      title: "The Student Budgeter",
+      subtitle: "",
+      description: "You've just received pocket money or a semester allowance. Planmoni helps you avoid blowing it in one week and makes it last the whole term.",
+      bgColor: "from-green-50 to-green-100",
+      iconBg: "bg-green-100"
     },
     {
-      icon: <Briefcase className="w-12 h-12 text-[#1F3A8A]" />,
-      title: "Freelancer Income Management",
-      description: "Handle irregular payments with ease and create stable income streams."
+      icon: <Briefcase className="w-12 h-12 text-purple-600" />,
+      title: "The Salary Manager",
+      subtitle: "(Self-employed or Employer)",
+      description: "You receive a large payment and need to split it up — for your salary, staff wages, or recurring business expenses. Planmoni releases it on your terms.",
+      bgColor: "from-purple-50 to-purple-100",
+      iconBg: "bg-purple-100"
     },
     {
-      icon: <Target className="w-12 h-12 text-[#1F3A8A]" />,
-      title: "Project-Based Saving",
-      description: "Save and release money for specific goals like travel, business, or purchases."
+      icon: <Home className="w-12 h-12 text-orange-600" />,
+      title: "The Rent & Bills Planner",
+      subtitle: "",
+      description: "You've saved up for rent or future bills. Lock it in with Planmoni and get it back when the due date comes — untouched and on time.",
+      bgColor: "from-orange-50 to-orange-100",
+      iconBg: "bg-orange-100"
     },
     {
-      icon: <Zap className="w-12 h-12 text-[#1F3A8A]" />,
-      title: "Impulse Control",
-      description: "Prevent impulsive buying by making funds temporarily inaccessible."
+      icon: <ShoppingCart className="w-12 h-12 text-red-600" />,
+      title: "The Impulse Spender",
+      subtitle: "",
+      description: "You're trying to break the cycle of spending money just because it's there. Planmoni makes your money harder to touch — on purpose.",
+      bgColor: "from-red-50 to-red-100",
+      iconBg: "bg-red-100"
+    },
+    {
+      icon: <Target className="w-12 h-12 text-indigo-600" />,
+      title: "The Project Saver",
+      subtitle: "",
+      description: "You're planning a trip, wedding, or business launch. Deposit a lump sum and get a steady drip of funds to stay on track and stress-free.",
+      bgColor: "from-indigo-50 to-indigo-100",
+      iconBg: "bg-indigo-100"
+    },
+    {
+      icon: <Users className="w-12 h-12 text-pink-600" />,
+      title: "The Family Budgeter",
+      subtitle: "",
+      description: "You're a parent managing household finances. Use Planmoni to automate releases for school fees, groceries, or monthly allowances.",
+      bgColor: "from-pink-50 to-pink-100",
+      iconBg: "bg-pink-100"
+    },
+    {
+      icon: <Coffee className="w-12 h-12 text-amber-600" />,
+      title: "The Hustler with Multiple Side Gigs",
+      subtitle: "",
+      description: "Your side hustles pay unpredictably. Planmoni helps you smooth things out so you're not broke between paydays.",
+      bgColor: "from-amber-50 to-amber-100",
+      iconBg: "bg-amber-100"
     }
   ];
 
@@ -918,31 +961,56 @@ function App() {
       </section>
 
       {/* Use Cases */}
-      <section id="use-cases" className="py-20 bg-white">
+      <section id="use-cases" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">Use Cases</h3>
-            <p className="text-xl text-gray-600">Built for real life money needs</p>
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">Use Cases for Planmoni</h3>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Whether you're managing irregular income, controlling spending, or planning for the future, Planmoni adapts to your unique financial situation.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {useCases.map((useCase, index) => (
-              <div key={index} className="bg-gradient-to-br from-[#1F3A8A]/5 to-[#1F3A8A]/10 p-8 rounded-2xl hover:bg-gradient-to-br hover:from-[#1F3A8A]/10 hover:to-[#1F3A8A]/20 transition-all group">
-                <div className="space-y-4">
-                  <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center group-hover:bg-gray-50 transition-colors">
+              <div key={index} className={`bg-gradient-to-br ${useCase.bgColor} p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group border border-white/50`}>
+                <div className="space-y-6">
+                  <div className={`w-16 h-16 ${useCase.iconBg} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                     {useCase.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900">{useCase.title}</h3>
-                  <p className="text-gray-600">{useCase.description}</p>
+                  <div className="space-y-3">
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">{useCase.title}</h4>
+                      {useCase.subtitle && (
+                        <p className="text-sm font-medium text-gray-600 mt-1">{useCase.subtitle}</p>
+                      )}
+                    </div>
+                    <p className="text-gray-700 leading-relaxed">{useCase.description}</p>
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Bottom CTA for Use Cases */}
+          <div className="text-center mt-16">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 max-w-2xl mx-auto">
+              <div className="space-y-4">
+                <h4 className="text-2xl font-bold text-gray-900">Find Your Perfect Use Case</h4>
+                <p className="text-gray-600">
+                  Ready to take control of your finances? Start with Planmoni today and transform how you manage money.
+                </p>
+                <button className="bg-gradient-to-r from-[#1F3A8A] to-[#1e3a8a] hover:from-[#1e3a8a] hover:to-[#1F3A8A] text-white px-8 py-3 rounded-xl font-semibold transition-all transform hover:scale-105 flex items-center space-x-2 mx-auto">
+                  <Download className="w-5 h-5" />
+                  <span>Get Started Now</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* What Our Users Say */}
-      <section id="reviews" className="py-20 bg-gray-50">
+      <section id="reviews" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">What Our Users Say</h3>
@@ -951,7 +1019,7 @@ function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-6 rounded-2xl hover:bg-gray-50 transition-colors">
+              <div key={index} className="bg-gray-50 p-6 rounded-2xl hover:bg-gray-100 transition-colors">
                 <div className="space-y-4">
                   <div className="flex space-x-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
