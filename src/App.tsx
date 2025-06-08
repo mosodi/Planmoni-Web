@@ -520,9 +520,9 @@ function App() {
               
               <div className="space-y-4 lg:space-y-6">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Join 1M+ Users who use's Planmoni to
+                  Users Planmoni;
                   <br />
-                  <span className="text-[#1F3A8A]">stabilize their cashflow</span>
+                  <span className="text-[#1F3A8A]">Stabilize Cashflow</span>
                 </h1>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
                   Deposit your money, lock it safely, and receive automated payouts while staying in control.
