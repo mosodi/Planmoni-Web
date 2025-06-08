@@ -557,9 +557,9 @@ function App() {
               See How It Works
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
-              Three simple steps to
+              Here is how Planmoni can
               <br />
-              <span className="text-[#1F3A8A]">control money </span>
+              <span className="text-[#1F3A8A]">help you control money </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Put some money aside, get it back according to your schedule. 
