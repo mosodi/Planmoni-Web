@@ -274,31 +274,6 @@ function App() {
     return option ? option.payouts : newPayouts.totalPayouts;
   };
 
-  const getFrequencyLabel = () => {
-    switch (newCalculatorFrequency) {
-      case 'monthly': return 'monthly';
-      case 'biweekly': return 'bi-weekly';
-      case 'weekly': return 'weekly';
-      default: return 'monthly';
-    }
-  };
-
-  // Responsive text sizing based on amount length
-  const getResponsiveTextSize = (amount: number) => {
-    const amountString = formatCurrency(amount);
-    const length = amountString.length;
-    
-    if (length <= 10) {
-      return 'text-5xl lg:text-6xl'; // Normal size for smaller amounts
-    } else if (length <= 15) {
-      return 'text-4xl lg:text-5xl'; // Medium size
-    } else if (length <= 20) {
-      return 'text-3xl lg:text-4xl'; // Smaller size
-    } else {
-      return 'text-2xl lg:text-3xl'; // Smallest size for very large amounts
-    }
-  };
-
   // Dynamic download button component
   const DownloadButton = ({ className = "" }: { className?: string }) => {
     if (deviceType === 'ios') {
@@ -581,11 +556,11 @@ function App() {
               <Smartphone className="w-4 h-4 mr-2" />
               See How It Works
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
+            <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
               Here is how Planmoni can
               <br />
               <span className="text-[#1F3A8A]">help you control money </span>
-            </h2>
+            </h3>
           </div>
 
           {/* Steps with App Screenshots */}
@@ -773,7 +748,7 @@ function App() {
       <section id="features" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Core Features</h2>
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">Core Features</h3>
             <p className="text-xl text-gray-600">Everything you need to control your spending</p>
           </div>
 
@@ -793,7 +768,7 @@ function App() {
         </div>
       </section>
 
-      {/* Payout Calculator Section - Redesigned */}
+      {/* Payout Calculator Section */}
       <section id="calculator" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
@@ -801,18 +776,18 @@ function App() {
               <Calculator className="w-4 h-4 mr-2" />
               Financial Planning Tool
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Calculate Your Payouts</h2>
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">Calculate Your Payouts</h3>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               See exactly how much you'll receive and when. Plan your financial discipline with precision.
             </p>
           </div>
 
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-xl">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-gradient-to-br from-[#1F3A8A]/5 via-white to-[#1F3A8A]/10 rounded-3xl p-8 lg:p-12 border border-[#1F3A8A]/10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 
-                {/* Input Section - Left Column */}
-                <div className="lg:col-span-1 space-y-8">
+                {/* Input Section */}
+                <div className="space-y-8">
                   <div className="space-y-6">
                     <div>
                       <label className="block text-sm font-semibold text-gray-900 mb-3">
@@ -825,7 +800,7 @@ function App() {
                           value={formatNumber(newCalculatorAmount)}
                           onChange={handleNewAmountChange}
                           placeholder="10,000,000"
-                          className="w-full pl-12 pr-4 py-4 text-2xl font-bold text-gray-900 bg-white rounded-xl border-2 border-gray-200 focus:border-[#1F3A8A] focus:ring-0 focus:outline-none transition-colors shadow-sm"
+                          className="w-full pl-12 pr-4 py-4 text-2xl font-bold text-gray-900 bg-white rounded-xl border-2 border-gray-200 focus:border-[#1F3A8A] focus:ring-0 focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -837,7 +812,7 @@ function App() {
                       <select
                         value={newCalculatorDuration}
                         onChange={(e) => setNewCalculatorDuration(e.target.value)}
-                        className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-white rounded-xl border-2 border-gray-200 focus:border-[#1F3A8A] focus:ring-0 focus:outline-none transition-colors shadow-sm"
+                        className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-white rounded-xl border-2 border-gray-200 focus:border-[#1F3A8A] focus:ring-0 focus:outline-none transition-colors"
                       >
                         <option value="6">6 months</option>
                         <option value="12">12 months</option>
@@ -851,15 +826,15 @@ function App() {
                       <label className="block text-sm font-semibold text-gray-900 mb-3">
                         Payout Frequency
                       </label>
-                      <div className="space-y-3">
+                      <div className="grid grid-cols-1 gap-3">
                         {frequencyOptions.map((option) => (
                           <button
                             key={option.id}
                             onClick={() => setNewCalculatorFrequency(option.id)}
-                            className={`w-full flex items-center justify-between p-4 rounded-xl border-2 transition-all ${
+                            className={`flex items-center justify-between p-4 rounded-xl border-2 transition-all ${
                               newCalculatorFrequency === option.id
-                                ? 'border-[#1F3A8A] bg-[#1F3A8A]/5 text-[#1F3A8A] shadow-md'
-                                : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 shadow-sm'
+                                ? 'border-[#1F3A8A] bg-[#1F3A8A]/5 text-[#1F3A8A]'
+                                : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
                             }`}
                           >
                             <div className="flex items-center space-x-3">
@@ -878,95 +853,62 @@ function App() {
                   </div>
                 </div>
 
-                {/* Main Result Display - Center Column */}
-                <div className="lg:col-span-1 flex items-center justify-center">
-                  <div className="w-full max-w-md">
-                    <div className="bg-gradient-to-br from-[#1F3A8A] to-[#1e3a8a] rounded-3xl p-6 lg:p-8 text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                      <div className="text-center space-y-4 lg:space-y-6">
-                        <div className="space-y-2">
-                          <div className="flex items-center justify-center space-x-2 text-white/60">
-                            <Wallet className="w-4 h-4 lg:w-5 lg:h-5" />
-                            <span className="text-xs lg:text-sm font-medium uppercase tracking-wide">
-                              You'll receive {getFrequencyLabel()}
-                            </span>
-                          </div>
-                          <div className={`${getResponsiveTextSize(getCurrentPayout())} font-bold leading-none break-words`}>
-                            {formatCurrency(getCurrentPayout())}
-                          </div>
-                        </div>
-                        
-                        <div className="bg-white/10 rounded-xl p-3 lg:p-4 backdrop-blur-sm">
-                          <div className="text-white/80 text-xs lg:text-sm font-medium mb-1">Total Payments</div>
-                          <div className="text-xl lg:text-2xl font-bold text-white">
-                            {getCurrentPayoutCount()} payments
-                          </div>
-                          <div className="text-white/60 text-xs mt-1">
-                            Over {newCalculatorDuration} months
-                          </div>
-                        </div>
-
-                        <div className="pt-3 lg:pt-4 border-t border-white/20">
-                          <div className="text-white/60 text-xs lg:text-sm break-words">
-                            {getCurrentPayoutCount()} {getFrequencyLabel()} payments of {formatCurrency(getCurrentPayout())} each
-                          </div>
-                        </div>
+                {/* Results Section */}
+                <div className="space-y-6">
+                  {/* Main Payout Display */}
+                  <div className="bg-gradient-to-br from-[#1F3A8A] to-[#1e3a8a] rounded-2xl p-8 text-white">
+                    <div className="text-left space-y-4">
+                      <div className="flex items-center space-x-2 text-[#1F3A8A]/20">
+                        <Wallet className="w-5 h-5" />
+                        <span className="text-sm font-medium uppercase tracking-wide">
+                          You'll receive {newCalculatorFrequency}
+                        </span>
+                      </div>
+                      <div className="text-3xl sm:text-4xl lg:text-5xl font-bold break-words">
+                        {formatCurrency(getCurrentPayout())}
+                      </div>
+                      <div className="text-[#1F3A8A]/20 text-sm">
+                        {getCurrentPayoutCount()} {newCalculatorFrequency} payments of {formatCurrency(getCurrentPayout())} each
                       </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Summary & Details - Right Column */}
-                <div className="lg:col-span-1 space-y-6">
-                  {/* Total Locked Summary */}
-                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
-                    <div className="flex items-center space-x-3 mb-3">
-                      <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                        <PiggyBank className="w-5 h-5 text-green-600" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-medium text-green-800">Total Locked</div>
-                        <div className="text-2xl font-bold text-green-900 break-words">
-                          {formatCurrency(newPayouts.totalAmount)}
-                        </div>
-                      </div>
+                  {/* Summary Card */}
+                  <div className="bg-white rounded-xl p-6 border border-gray-200">
+                    <div className="flex items-center space-x-2 text-gray-600 mb-2">
+                      <PiggyBank className="w-4 h-4" />
+                      <span className="text-sm font-medium">Total Locked</span>
+                    </div>
+                    <div className="text-2xl font-bold text-gray-900 break-words">
+                      {formatCurrency(newPayouts.totalAmount)}
                     </div>
                   </div>
 
                   {/* All Frequency Options */}
-                  <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                  <div className="bg-gray-50 rounded-xl p-6">
                     <h4 className="text-sm font-semibold text-gray-900 mb-4 flex items-center">
                       <Info className="w-4 h-4 mr-2" />
                       All Payout Options
                     </h4>
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center py-3 px-4 bg-white rounded-lg border border-gray-100">
-                        <div className="flex items-center space-x-3">
-                          <Calendar className="w-4 h-4 text-gray-400" />
-                          <span className="text-gray-700 font-medium">Monthly</span>
-                        </div>
-                        <span className="font-bold text-gray-900 text-sm break-words">{formatCurrency(newPayouts.monthly)}</span>
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-600">Monthly</span>
+                        <span className="font-semibold text-gray-900 text-sm break-words">{formatCurrency(newPayouts.monthly)}</span>
                       </div>
-                      <div className="flex justify-between items-center py-3 px-4 bg-white rounded-lg border border-gray-100">
-                        <div className="flex items-center space-x-3">
-                          <Clock className="w-4 h-4 text-gray-400" />
-                          <span className="text-gray-700 font-medium">Bi-weekly</span>
-                        </div>
-                        <span className="font-bold text-gray-900 text-sm break-words">{formatCurrency(newPayouts.biweekly)}</span>
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-600">Bi-weekly</span>
+                        <span className="font-semibold text-gray-900 text-sm break-words">{formatCurrency(newPayouts.biweekly)}</span>
                       </div>
-                      <div className="flex justify-between items-center py-3 px-4 bg-white rounded-lg border border-gray-100">
-                        <div className="flex items-center space-x-3">
-                          <Zap className="w-4 h-4 text-gray-400" />
-                          <span className="text-gray-700 font-medium">Weekly</span>
-                        </div>
-                        <span className="font-bold text-gray-900 text-sm break-words">{formatCurrency(newPayouts.weekly)}</span>
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-gray-600">Weekly</span>
+                        <span className="font-semibold text-gray-900 text-sm break-words">{formatCurrency(newPayouts.weekly)}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* CTA Button */}
-                  <button className="w-full bg-gradient-to-r from-[#1F3A8A] to-[#1e3a8a] hover:from-[#1e3a8a] hover:to-[#1F3A8A] text-white py-4 px-6 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2">
-                    <Download className="w-5 h-5" />
-                    <span>Start Your Plan</span>
+                  <button className="w-full bg-gradient-to-r from-[#1F3A8A] to-[#1e3a8a] hover:from-[#1e3a8a] hover:to-[#1F3A8A] text-white py-4 px-6 rounded-xl font-semibold text-lg transition-all transform hover:scale-105">
+                    Start Your Plan
                   </button>
                 </div>
               </div>
@@ -979,7 +921,7 @@ function App() {
       <section id="use-cases" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Use Cases</h2>
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">Use Cases</h3>
             <p className="text-xl text-gray-600">Built for real life money needs</p>
           </div>
 
@@ -1003,7 +945,7 @@ function App() {
       <section id="reviews" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">What Our Users Say</h2>
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">What Our Users Say</h3>
             <p className="text-xl text-gray-600">Real stories from people taking control</p>
           </div>
 
@@ -1041,7 +983,7 @@ function App() {
       <section id="security" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Bank-Level Security</h2>
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">Bank-Level Security</h3>
             <p className="text-xl text-gray-600">Your money is protected by industry-leading security</p>
           </div>
 
@@ -1066,7 +1008,7 @@ function App() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white">Take Control of Your Money Today</h2>
+              <h3 className="text-3xl sm:text-4xl font-bold text-white">Take Control of Your Money Today</h3>
               <p className="text-xl text-[#1F3A8A]/20">Join thousands who've mastered their spending with Planmoni</p>
             </div>
             
