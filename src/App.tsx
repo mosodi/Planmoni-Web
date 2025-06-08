@@ -561,9 +561,6 @@ function App() {
               <br />
               <span className="text-[#1F3A8A]">help you control money </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Put some money aside, get it back according to your schedule. 
-            </p>
           </div>
 
           {/* Steps with App Screenshots */}
