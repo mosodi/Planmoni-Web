@@ -731,9 +731,9 @@ function App() {
               See How It Works
             </div>
             <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
-              With just three steps you can
+              With just three steps
               <br />
-              <span className="text-[#1F3A8A]">start using Planmoni </span>
+              <span className="text-[#1F3A8A]">you can start controling money </span>
             </h3>
           </div>
 
