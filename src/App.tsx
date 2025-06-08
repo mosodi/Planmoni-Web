@@ -99,52 +99,9 @@ const LiveStats = () => {
   );
 };
 
-// Mobile Download Button Component
-const MobileDownloadButton = () => {
-  const [isIOS, setIsIOS] = useState(false);
-  const [isAndroid, setIsAndroid] = useState(false);
-
-  useEffect(() => {
-    const userAgent = navigator.userAgent || navigator.vendor;
-    
-    if (/iPad|iPhone|iPod/.test(userAgent)) {
-      setIsIOS(true);
-    } else if (/android/i.test(userAgent)) {
-      setIsAndroid(true);
-    }
-  }, []);
-
-  if (!isIOS && !isAndroid) return null;
-
-  return (
-    <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden">
-      <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-4">
-        <div className="flex items-center space-x-4">
-          <img 
-            src="/assets/AppLogo.png" 
-            alt="Planmoni" 
-            className="w-12 h-12 rounded-xl"
-          />
-          <div className="flex-1">
-            <h3 className="font-semibold text-gray-900">Get Planmoni</h3>
-            <p className="text-sm text-gray-600">Download the app now</p>
-          </div>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-200 flex items-center space-x-2">
-            <Download className="w-4 h-4" />
-            <span>{isIOS ? 'App Store' : 'Play Store'}</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 function App() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Mobile Download Button */}
-      <MobileDownloadButton />
-
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
