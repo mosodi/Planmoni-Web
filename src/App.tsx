@@ -601,7 +601,7 @@ function App() {
               Real-World Solutions
             </div>
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
-              Use Cases for Planmoni
+              Planmoni was built for you
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Whether you're an entrepreneur, student, or family manager, Planmoni adapts to your unique financial situation
