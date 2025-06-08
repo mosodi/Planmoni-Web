@@ -917,36 +917,6 @@ function App() {
         </div>
       </section>
 
-      {/* App Download Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-            {/* Optimized Device Mockup */}
-            <div className="flex-1 relative flex justify-center order-2 lg:order-1 w-full max-w-sm lg:max-w-none">
-              <DeviceMockup />
-            </div>
-
-            {/* Text Content */}
-            <div className="flex-1 space-y-6 lg:space-y-8 text-center lg:text-left order-1 lg:order-2">
-              <div className="space-y-4 lg:space-y-6">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                  Ready to start planning your money today?
-                  <br />
-                  <span className="text-[#1F3A8A]">Get the Planmoni app now</span>
-                </h2>
-                <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                  Download the Planmoni app and take control of your finances with our powerful money planning tools.
-                </p>
-              </div>
-              
-              <div className="flex justify-center lg:justify-start">
-                <DownloadButton />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Use Cases */}
       <section id="use-cases" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
