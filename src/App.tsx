@@ -525,7 +525,7 @@ function App() {
                   <span className="text-[#1F3A8A]">stabilize cash flow</span>
                 </h1>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                  Put some money aside, get it back according to your schedule. Perfect for managing irregular incomes and making timely payments such as salaries, rent, and more
+                  Put some money aside, get it back according to your schedule. Join millions of users managing irregular incomes and making timely payments such as salaries, rent, and more with Planmoni
                 </p>
               </div>
               
