@@ -510,7 +510,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
             {/* Text Content */}
-            <div className="flex-1 space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1">
+            <div className="flex-1 space-y-6 lg:space-y-8 text-center lg:text-left order-1">
               {/* Badge */}
               <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-md border border-[#1F3A8A]/20 text-[#1F3A8A] text-xs sm:text-sm font-medium bg-[#1F3A8A]/5">
                 <span className="hidden sm:inline">🎉 PLANMONI APP V.3.2 IS LIVE</span>
@@ -519,7 +519,7 @@ function App() {
               </div>
               
               <div className="space-y-4 lg:space-y-6">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
                   Avoid unnecessary spending;
                   <br />
                   <span className="text-[#1F3A8A]">Plan your money</span>
@@ -534,8 +534,15 @@ function App() {
               </div>
             </div>
 
-            {/* Optimized Device Mockup */}
-            <div className="flex-1 relative justify-center order-1 lg:order-2 w-full max-w-lg lg:max-w-none">
+            {/* Optimized Device Mockup - Only visible on desktop */}
+            <div className="hidden lg:flex flex-1 relative justify-center order-2 w-full max-w-lg lg:max-w-none">
+              <DeviceMockup />
+            </div>
+          </div>
+
+          {/* Mobile Device Mockup - Only visible on mobile, positioned below download button */}
+          <div className="lg:hidden mt-8 flex justify-center">
+            <div className="w-full max-w-sm">
               <DeviceMockup />
             </div>
           </div>
@@ -551,7 +558,7 @@ function App() {
               <Smartphone className="w-4 h-4 mr-2" />
               See How It Works
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
               Three Simple Steps to
               <br />
               <span className="text-[#1F3A8A]">Financial Freedom</span>
@@ -572,7 +579,7 @@ function App() {
                     <span className="w-6 h-6 bg-[#1F3A8A] text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">1</span>
                     STEP ONE
                   </div>
-                  <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                  <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
                     Deposit Your Money
                   </h3>
                   <p className="text-xl text-gray-600 leading-relaxed">
@@ -633,7 +640,7 @@ function App() {
                     <span className="w-6 h-6 bg-purple-800 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">2</span>
                     STEP TWO
                   </div>
-                  <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                  <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
                     Set Your Payout Plan
                   </h3>
                   <p className="text-xl text-gray-600 leading-relaxed">
@@ -672,7 +679,7 @@ function App() {
                     <span className="w-6 h-6 bg-green-800 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">3</span>
                     STEP THREE
                   </div>
-                  <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                  <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
                     Stay Disciplined
                   </h3>
                   <p className="text-xl text-gray-600 leading-relaxed">
@@ -719,7 +726,7 @@ function App() {
           <div className="text-center mt-32">
             <div className="max-w-4xl mx-auto space-y-8">
               <div className="space-y-6">
-                <h3 className="text-3xl lg:text-4xl font-bold text-gray-900">
+                <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">
                   Ready to Transform Your Financial Habits?
                 </h3>
                 <p className="text-xl text-gray-600 leading-relaxed">
@@ -927,7 +934,7 @@ function App() {
             {/* Text Content */}
             <div className="flex-1 space-y-6 lg:space-y-8 text-center lg:text-left order-1 lg:order-2">
               <div className="space-y-4 lg:space-y-6">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
                   Ready to start planning your money today?
                   <br />
                   <span className="text-[#1F3A8A]">Get the Planmoni app now</span>
