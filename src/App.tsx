@@ -520,7 +520,7 @@ function App() {
               
               <div className="space-y-4 lg:space-y-6">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Planmoni can help you;
+                  Planmoni will help you
                   <br />
                   <span className="text-[#1F3A8A]">stabilize cashflow</span>
                 </h1>
