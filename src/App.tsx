@@ -41,13 +41,7 @@ import {
   Percent,
   TrendingDown,
   Monitor,
-  ArrowDown,
-  Coffee,
-  Home,
-  Banknote,
-  ShoppingCart,
-  MapPin,
-  Heart
+  ArrowDown
 } from 'lucide-react';
 
 function App() {
@@ -56,6 +50,9 @@ function App() {
   const [newCalculatorDuration, setNewCalculatorDuration] = useState('12');
   const [newCalculatorFrequency, setNewCalculatorFrequency] = useState('monthly');
   const [deviceType, setDeviceType] = useState<'ios' | 'android' | 'web'>('web');
+
+  // Get current year for footer
+  const currentYear = new Date().getFullYear();
 
   // Device detection
   useEffect(() => {
@@ -107,68 +104,44 @@ function App() {
 
   const useCases = [
     {
-      icon: <TrendingUp className="w-12 h-12 text-purple-600" />,
-      title: "The Irregular Earner",
-      subtitle: "Entrepreneur / Freelancer",
-      description: "You make money in bursts — some months are good, others not so much. Planmoni helps you stretch those good months by paying you gradually.",
-      gradient: "from-purple-50 to-purple-100",
-      hoverGradient: "hover:from-purple-100 hover:to-purple-200"
+      icon: <Briefcase className="w-12 h-12 text-[#1F3A8A]" />,
+      title: "The Irregular Earner (Entrepreneur / Freelancer)",
+      description: "You make money in bursts — some months are good, others not so much. Planmoni helps you stretch those good months by paying you gradually."
     },
     {
-      icon: <GraduationCap className="w-12 h-12 text-blue-600" />,
+      icon: <GraduationCap className="w-12 h-12 text-green-600" />,
       title: "The Student Budgeter",
-      subtitle: "",
-      description: "You've just received pocket money or a semester allowance. Planmoni helps you avoid blowing it in one week and makes it last the whole term.",
-      gradient: "from-blue-50 to-blue-100",
-      hoverGradient: "hover:from-blue-100 hover:to-blue-200"
+      description: "You've just received pocket money or a semester allowance. Planmoni helps you avoid blowing it in one week and makes it last the whole term."
     },
     {
-      icon: <Briefcase className="w-12 h-12 text-green-600" />,
-      title: "The Salary Manager",
-      subtitle: "Self-employed or Employer",
-      description: "You receive a large payment and need to split it up — for your salary, staff wages, or recurring business expenses. Planmoni releases it on your terms.",
-      gradient: "from-green-50 to-green-100",
-      hoverGradient: "hover:from-green-100 hover:to-green-200"
+      icon: <Users className="w-12 h-12 text-purple-600" />,
+      title: "The Salary Manager (Self-employed or Employer)",
+      description: "You receive a large payment and need to split it up — for your salary, staff wages, or recurring business expenses. Planmoni releases it on your terms."
     },
     {
-      icon: <Home className="w-12 h-12 text-orange-600" />,
+      icon: <Building className="w-12 h-12 text-orange-600" />,
       title: "The Rent & Bills Planner",
-      subtitle: "",
-      description: "You've saved up for rent or future bills. Lock it in with Planmoni and get it back when the due date comes — untouched and on time.",
-      gradient: "from-orange-50 to-orange-100",
-      hoverGradient: "hover:from-orange-100 hover:to-orange-200"
+      description: "You've saved up for rent or future bills. Lock it in with Planmoni and get it back when the due date comes — untouched and on time."
     },
     {
-      icon: <ShoppingCart className="w-12 h-12 text-red-600" />,
+      icon: <Ban className="w-12 h-12 text-red-600" />,
       title: "The Impulse Spender",
-      subtitle: "",
-      description: "You're trying to break the cycle of spending money just because it's there. Planmoni makes your money harder to touch — on purpose.",
-      gradient: "from-red-50 to-red-100",
-      hoverGradient: "hover:from-red-100 hover:to-red-200"
+      description: "You're trying to break the cycle of spending money just because it's there. Planmoni makes your money harder to touch — on purpose."
     },
     {
-      icon: <Target className="w-12 h-12 text-indigo-600" />,
+      icon: <Target className="w-12 h-12 text-blue-600" />,
       title: "The Project Saver",
-      subtitle: "",
-      description: "You're planning a trip, wedding, or business launch. Deposit a lump sum and get a steady drip of funds to stay on track and stress-free.",
-      gradient: "from-indigo-50 to-indigo-100",
-      hoverGradient: "hover:from-indigo-100 hover:to-indigo-200"
+      description: "You're planning a trip, wedding, or business launch. Deposit a lump sum and get a steady drip of funds to stay on track and stress-free."
     },
     {
       icon: <Users className="w-12 h-12 text-pink-600" />,
       title: "The Family Budgeter",
-      subtitle: "",
-      description: "You're a parent managing household finances. Use Planmoni to automate releases for school fees, groceries, or monthly allowances.",
-      gradient: "from-pink-50 to-pink-100",
-      hoverGradient: "hover:from-pink-100 hover:to-pink-200"
+      description: "You're a parent managing household finances. Use Planmoni to automate releases for school fees, groceries, or monthly allowances."
     },
     {
       icon: <Zap className="w-12 h-12 text-yellow-600" />,
       title: "The Hustler with Multiple Side Gigs",
-      subtitle: "",
-      description: "Your side hustles pay unpredictably. Planmoni helps you smooth things out so you're not broke between paydays.",
-      gradient: "from-yellow-50 to-yellow-100",
-      hoverGradient: "hover:from-yellow-100 hover:to-yellow-200"
+      description: "Your side hustles pay unpredictably. Planmoni helps you smooth things out so you're not broke between paydays."
     }
   ];
 
@@ -455,6 +428,12 @@ function App() {
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
                 <button 
+                  onClick={() => scrollToSection('use-cases')}
+                  className="text-gray-600 hover:text-[#1F3A8A] transition-colors px-3 py-2 text-sm font-medium"
+                >
+                  Use Cases
+                </button>
+                <button 
                   onClick={() => scrollToSection('features')}
                   className="text-gray-600 hover:text-[#1F3A8A] transition-colors px-3 py-2 text-sm font-medium"
                 >
@@ -465,12 +444,6 @@ function App() {
                   className="text-gray-600 hover:text-[#1F3A8A] transition-colors px-3 py-2 text-sm font-medium"
                 >
                   Calculator
-                </button>
-                <button 
-                  onClick={() => scrollToSection('use-cases')}
-                  className="text-gray-600 hover:text-[#1F3A8A] transition-colors px-3 py-2 text-sm font-medium"
-                >
-                  Use Cases
                 </button>
                 <button 
                   onClick={() => scrollToSection('reviews')}
@@ -511,6 +484,12 @@ function App() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               <button 
+                onClick={() => scrollToSection('use-cases')}
+                className="text-gray-600 hover:text-[#1F3A8A] block px-3 py-2 text-base font-medium w-full text-left"
+              >
+                Use Cases
+              </button>
+              <button 
                 onClick={() => scrollToSection('features')}
                 className="text-gray-600 hover:text-[#1F3A8A] block px-3 py-2 text-base font-medium w-full text-left"
               >
@@ -521,12 +500,6 @@ function App() {
                 className="text-gray-600 hover:text-[#1F3A8A] block px-3 py-2 text-base font-medium w-full text-left"
               >
                 Calculator
-              </button>
-              <button 
-                onClick={() => scrollToSection('use-cases')}
-                className="text-gray-600 hover:text-[#1F3A8A] block px-3 py-2 text-base font-medium w-full text-left"
-              >
-                Use Cases
               </button>
               <button 
                 onClick={() => scrollToSection('reviews')}
@@ -567,7 +540,7 @@ function App() {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   This app will help you
                   <br />
-                  <span className="text-[#1F3A8A]">stabilize your cash flow</span>
+                  <span className="text-[#1F3A8A]">stabilize cash flow</span>
                 </h1>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
                   Join millions of users managing irregular incomes and making timely payments such as salaries, rent, and more with Planmoni
@@ -596,58 +569,22 @@ function App() {
       <section id="use-cases" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#1F3A8A]/10 text-[#1F3A8A] text-sm font-semibold">
-              <Target className="w-4 h-4 mr-2" />
-              Real-World Solutions
-            </div>
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
-              Planmoni was built for you
-            </h3>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Whether you're an entrepreneur, student, or family manager, Planmoni adapts to your unique financial situation
-            </p>
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">Use Cases for Planmoni</h3>
+            <p className="text-xl text-gray-600">Built for real life money needs</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {useCases.map((useCase, index) => (
-              <div 
-                key={index} 
-                className={`bg-gradient-to-br ${useCase.gradient} ${useCase.hoverGradient} p-8 rounded-2xl transition-all duration-300 group border border-white/50 shadow-sm hover:shadow-lg`}
-              >
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center group-hover:bg-gray-50 transition-colors shadow-sm">
-                      {useCase.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-900 mb-1">{useCase.title}</h3>
-                      {useCase.subtitle && (
-                        <p className="text-sm font-medium text-gray-600 mb-3">{useCase.subtitle}</p>
-                      )}
-                    </div>
+              <div key={index} className="bg-white p-8 rounded-2xl hover:bg-gray-50 transition-all group border border-gray-100">
+                <div className="space-y-4">
+                  <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center group-hover:bg-gray-100 transition-colors">
+                    {useCase.icon}
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{useCase.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-900">{useCase.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{useCase.description}</p>
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Bottom CTA */}
-          <div className="text-center mt-16">
-            <div className="max-w-2xl mx-auto space-y-6">
-              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900">
-                Which one sounds like you?
-              </h3>
-              <p className="text-lg text-gray-600">
-                Get started with Planmoni and take control of your financial habits today
-              </p>
-              <div className="flex justify-center">
-                <button className="bg-gradient-to-r from-[#1F3A8A] to-[#1e3a8a] hover:from-[#1e3a8a] hover:to-[#1F3A8A] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 flex items-center space-x-2">
-                  <Download className="w-5 h-5" />
-                  <span>Get Planmoni Now</span>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -1155,7 +1092,7 @@ function App() {
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Planmoni. All rights reserved.</p>
+            <p>&copy; {currentYear} Planmoni. All rights reserved.</p>
           </div>
         </div>
       </footer>
