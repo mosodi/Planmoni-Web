@@ -725,7 +725,7 @@ function App() {
                   Ready to Transform Your Financial Habits?
                 </h3>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Join thousands who've mastered their spending with Planmoni's proven three-step system
+                  Get the Planmoni's app for free
                 </p>
               </div>
               
