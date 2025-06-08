@@ -401,7 +401,7 @@ function App() {
             </div>
           </div>
         </div>
-      </footer>
+      </section>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
