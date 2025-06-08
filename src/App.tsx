@@ -142,6 +142,11 @@ function App() {
       icon: <Zap className="w-12 h-12 text-yellow-600" />,
       title: "The Hustler with Multiple Side Gigs",
       description: "Your side hustles pay unpredictably. Planmoni helps you smooth things out so you're not broke between paydays."
+    },
+    {
+      icon: <Building className="w-12 h-12 text-teal-600" />,
+      title: "The Small Business Owner",
+      description: "You receive payments from clients at different times, but you still need to pay staff, rent, and suppliers on a regular schedule. Planmoni helps you set money aside and release it when it's needed — keeping your business running smoothly without overspending."
     }
   ];
 
@@ -573,7 +578,7 @@ function App() {
             <p className="text-xl text-gray-600">Built for real life money needs</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {useCases.map((useCase, index) => (
               <div key={index} className="bg-white p-8 rounded-2xl hover:bg-gray-50 transition-all group border border-gray-100">
                 <div className="space-y-4">
