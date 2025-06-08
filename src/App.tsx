@@ -520,12 +520,12 @@ function App() {
               
               <div className="space-y-4 lg:space-y-6">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Put some money aside; 
+                  This app will help you
                   <br />
-                  <span className="text-[#1F3A8A]">get it back on a schedule.</span>
+                  <span className="text-[#1F3A8A]">stabilize cash flow</span>
                 </h1>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                  Perfect for managing irregular inflows and making timely payments like salaries, rent, and more
+                  Put some money aside, get it back on a schedule. Perfect for managing irregular inflows and making timely payments like salaries, rent, and more
                 </p>
               </div>
               
