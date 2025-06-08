@@ -525,7 +525,7 @@ function App() {
                   <span className="text-[#1F3A8A]">stabilize cash flow</span>
                 </h1>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                  Put some money aside, get it back on a schedule. Perfect for managing irregular inflows and making timely payments like salaries, rent, and more
+                  Put some money aside, get it back on a schedule. Perfect for managing irregular incomes and making timely payments such as salaries, rent, and more
                 </p>
               </div>
               
