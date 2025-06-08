@@ -615,7 +615,7 @@ function App() {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   This app will help you
                   <br />
-                  <span className="text-[#1F3A8A]">stabilize cash flow</span>
+                  <span className="text-[#1F3A8A]">stabilize your cash flow</span>
                 </h1>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
                   Join millions of users managing irregular incomes and making timely payments such as salaries, rent, and more with Planmoni
@@ -650,12 +650,12 @@ function App() {
               Real Life Solutions
             </div>
             <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Use Cases for
+              Built for real life
               <br />
-              <span className="text-[#1F3A8A]">Planmoni</span>
+              <span className="text-[#1F3A8A]">money needs.</span>
             </h3>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Built for real life money needs. See how Planmoni transforms financial habits across different lifestyles.
+              See how Planmoni transforms financial habits across different lifestyles.
             </p>
           </div>
 
