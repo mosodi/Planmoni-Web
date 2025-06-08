@@ -274,6 +274,15 @@ function App() {
     return option ? option.payouts : newPayouts.totalPayouts;
   };
 
+  const getFrequencyLabel = () => {
+    switch (newCalculatorFrequency) {
+      case 'monthly': return 'monthly';
+      case 'biweekly': return 'bi-weekly';
+      case 'weekly': return 'weekly';
+      default: return 'monthly';
+    }
+  };
+
   // Dynamic download button component
   const DownloadButton = ({ className = "" }: { className?: string }) => {
     if (deviceType === 'ios') {
@@ -855,20 +864,20 @@ function App() {
 
                 {/* Results Section */}
                 <div className="space-y-6">
-                  {/* Main Payout Display */}
+                  {/* Main Payout Display - Left Aligned */}
                   <div className="bg-gradient-to-br from-[#1F3A8A] to-[#1e3a8a] rounded-2xl p-8 text-white">
-                    <div className="text-center space-y-4">
-                      <div className="flex items-center justify-center space-x-2 text-[#1F3A8A]/20">
+                    <div className="text-left space-y-4">
+                      <div className="flex items-center space-x-2 text-[#1F3A8A]/20">
                         <Wallet className="w-5 h-5" />
                         <span className="text-sm font-medium uppercase tracking-wide">
-                          You'll receive {newCalculatorFrequency}
+                          You'll receive {getFrequencyLabel()}
                         </span>
                       </div>
                       <div className="text-4xl lg:text-5xl font-bold">
                         {formatCurrency(getCurrentPayout())}
                       </div>
                       <div className="text-[#1F3A8A]/20 text-sm">
-                        For {getCurrentPayoutCount()} payments over {newCalculatorDuration} months
+                        {getCurrentPayoutCount()} {getFrequencyLabel()} payments of {formatCurrency(getCurrentPayout())} each
                       </div>
                     </div>
                   </div>
