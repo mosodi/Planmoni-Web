@@ -573,7 +573,8 @@ function App() {
             
             {/* Step 1 - Deposit Your Money */}
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-              <div className="flex-1 space-y-8 text-center lg:text-left order-2 lg:order-1">
+              {/* Desktop Layout: Text on left, Image on right */}
+              <div className="flex-1 space-y-8 text-center lg:text-left order-1">
                 <div className="space-y-6">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#1F3A8A]/10 to-[#1F3A8A]/20 text-[#1F3A8A] text-sm font-bold">
                     <span className="w-6 h-6 bg-[#1F3A8A] text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">1</span>
@@ -607,9 +608,22 @@ function App() {
                     </div>
                   </div>
                 </div>
+
+                {/* Mobile Image - Only visible on mobile */}
+                <div className="lg:hidden flex justify-center mt-8">
+                  <div className="relative">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-[#1F3A8A]/20 to-[#1F3A8A]/30 rounded-3xl opacity-20 blur-xl"></div>
+                    <img 
+                      src="/assets/DepositYourMoney.png" 
+                      alt="Deposit Money Interface" 
+                      className="relative w-full max-w-sm h-auto rounded-3xl"
+                    />
+                  </div>
+                </div>
               </div>
               
-              <div className="flex-1 flex justify-center order-1 lg:order-2">
+              {/* Desktop Image - Only visible on desktop */}
+              <div className="hidden lg:flex flex-1 justify-center order-2">
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-[#1F3A8A]/20 to-[#1F3A8A]/30 rounded-3xl opacity-20 blur-xl"></div>
                   <img 
@@ -623,7 +637,8 @@ function App() {
 
             {/* Step 2 - Set Your Payout Plan */}
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-              <div className="flex-1 flex justify-center order-1">
+              {/* Desktop Image - Only visible on desktop */}
+              <div className="hidden lg:flex flex-1 justify-center order-1">
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-purple-200 to-pink-200 rounded-3xl opacity-20 blur-xl"></div>
                   <img 
@@ -668,12 +683,24 @@ function App() {
                     </div>
                   </div>
                 </div>
+
+                {/* Mobile Image - Only visible on mobile */}
+                <div className="lg:hidden flex justify-center mt-8">
+                  <div className="relative">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-purple-200 to-pink-200 rounded-3xl opacity-20 blur-xl"></div>
+                    <img 
+                      src="/assets/SetYourPayoutPlan.png" 
+                      alt="Set Payout Plan Interface" 
+                      className="relative w-full max-w-sm h-auto rounded-3xl"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Step 3 - Stay Disciplined */}
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-              <div className="flex-1 space-y-8 text-center lg:text-left order-2 lg:order-1">
+              <div className="flex-1 space-y-8 text-center lg:text-left order-1">
                 <div className="space-y-6">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-100 to-green-200 text-green-800 text-sm font-bold">
                     <span className="w-6 h-6 bg-green-800 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">3</span>
@@ -707,9 +734,22 @@ function App() {
                     </div>
                   </div>
                 </div>
+
+                {/* Mobile Image - Only visible on mobile */}
+                <div className="lg:hidden flex justify-center mt-8">
+                  <div className="relative">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-green-200 to-emerald-200 rounded-3xl opacity-20 blur-xl"></div>
+                    <img 
+                      src="/assets/StayDisciplined.png" 
+                      alt="Stay Disciplined Interface" 
+                      className="relative w-full max-w-sm h-auto rounded-3xl"
+                    />
+                  </div>
+                </div>
               </div>
               
-              <div className="flex-1 flex justify-center order-1 lg:order-2">
+              {/* Desktop Image - Only visible on desktop */}
+              <div className="hidden lg:flex flex-1 justify-center order-2">
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-green-200 to-emerald-200 rounded-3xl opacity-20 blur-xl"></div>
                   <img 
